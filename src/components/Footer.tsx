@@ -1,5 +1,3 @@
-import { WisdomLogoMark } from '@/components/WisdomLogo'
-
 export default function Footer() {
   return (
     <footer className="bg-void border-t border-[#111111] py-12">
@@ -7,7 +5,7 @@ export default function Footer() {
         
         {/* Brand signature */}
         <div className="flex items-center gap-3">
-          <WisdomLogoMark size={28} />
+          <img src="/wisdom_logo.png" alt="Wisdom Logo" className="h-6 w-auto object-contain" />
           <span className="text-[#bdbdbd] text-[13px] font-mono tracking-wider uppercase">
             Teenspace 2026 &mdash; Wisdom Students Kozhikode North
           </span>

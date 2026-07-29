@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { WisdomLogoMark } from '@/components/WisdomLogo'
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
@@ -21,15 +20,7 @@ export default function Navbar() {
         <nav className="max-w-[1280px] mx-auto px-6 h-20 flex items-center justify-between">
           {/* Logo Lockup */}
           <a href="#home" className="flex items-center gap-3 group">
-            <WisdomLogoMark size={32} />
-            <div className="flex flex-col leading-none gap-0.5">
-              <span className="text-white font-medium text-[15px] uppercase tracking-[0.05em]">
-                Teenspace
-              </span>
-              <span className="text-[9px] text-[#9a9a9a] font-mono tracking-widest uppercase">
-                Wisdom Students
-              </span>
-            </div>
+            <img src="/wisdom_logo.png" alt="Wisdom Logo" className="h-8 w-auto object-contain" />
           </a>
 
           {/* Nav Links */}
@@ -75,7 +66,7 @@ export default function Navbar() {
           >
             <div className="flex flex-col gap-8">
               <div className="flex justify-center mb-6">
-                <WisdomLogoMark size={48} />
+                <img src="/wisdom_logo.png" alt="Wisdom Logo" className="h-12 w-auto object-contain" />
               </div>
               {links.map((l, i) => (
                 <motion.a
