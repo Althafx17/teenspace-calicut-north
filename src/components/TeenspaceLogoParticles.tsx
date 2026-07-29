@@ -109,10 +109,10 @@ export default function TeenspaceLogoParticles() {
       // Calculate layout properties
       // Place the logo centered or slightly offset to the right as in Dala
       const isMobile = width < 768
-      const scale = isMobile ? Math.min(width, height) * 0.007 : Math.min(width, height) * 0.009
+      const scale = isMobile ? Math.min(width, height) * 0.008 : Math.min(width, height) * 0.009
       const logoW = 60 * scale
       const logoH = 48 * scale
-      const cx = isMobile ? (width - logoW) / 2 : width * 0.6
+      const cx = isMobile ? width - logoW * 0.75 : width * 0.6
       const cy = isMobile ? height * 0.55 : (height - logoH) / 2
 
       for (let i = 0; i < particleCount; i++) {

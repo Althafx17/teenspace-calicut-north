@@ -5,7 +5,7 @@ export default function Footer() {
         
         {/* Brand signature */}
         <div className="flex items-center gap-3">
-          <img src="/wisdom_logo.png" alt="Wisdom Logo" className="h-6 w-auto object-contain" />
+          <img src="/wisdom_logo.png" alt="Wisdom Logo" className="h-10 w-auto object-contain" />
           <span className="text-[#bdbdbd] text-[13px] font-mono tracking-wider uppercase">
             Teenspace 2026 &mdash; Wisdom Students Kozhikode North
           </span>

@@ -20,7 +20,7 @@ export default function Navbar() {
         <nav className="max-w-[1280px] mx-auto px-6 h-20 flex items-center justify-between">
           {/* Logo Lockup */}
           <a href="#home" className="flex items-center gap-3 group">
-            <img src="/wisdom_logo.png" alt="Wisdom Logo" className="h-8 w-auto object-contain" />
+            <img src="/wisdom_logo.png" alt="Wisdom Logo" className="h-12 w-auto object-contain" />
           </a>
 
           {/* Nav Links */}
