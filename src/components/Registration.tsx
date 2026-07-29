@@ -156,7 +156,7 @@ export default function Registration() {
 
                 {/* Submit */}
                 <div className="md:col-span-2">
-                  <button type="submit" disabled={status === 'loading'} className="btn-ghost px-6 py-3 text-[14px] disabled:opacity-40">
+                  <button type="submit" disabled={status === 'loading'} className="btn-iris w-full justify-center py-4 text-[14px] disabled:opacity-40">
                     {status === 'loading' ? (
                       <><Loader2 size={14} className="animate-spin" /> Submitting…</>
                     ) : (
