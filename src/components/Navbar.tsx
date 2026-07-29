@@ -17,10 +17,10 @@ export default function Navbar() {
   return (
     <>
       <header className="absolute top-0 left-0 right-0 z-50 bg-transparent">
-        <nav className="max-w-[1280px] mx-auto px-6 h-20 flex items-center justify-between">
+        <nav className="max-w-[1280px] mx-auto px-6 min-h-[120px] py-4 flex items-center justify-between">
           {/* Logo Lockup */}
           <a href="#home" className="flex items-center gap-3 group">
-            <img src="/wisdom_logo.png" alt="Wisdom Logo" className="h-12 w-auto object-contain" />
+            <img src="/wisdom_logo.png" alt="Wisdom Logo" className="h-28 max-w-none w-auto object-contain" />
           </a>
 
           {/* Nav Links */}
@@ -66,7 +66,7 @@ export default function Navbar() {
           >
             <div className="flex flex-col gap-8">
               <div className="flex justify-center mb-6">
-                <img src="/wisdom_logo.png" alt="Wisdom Logo" className="h-12 w-auto object-contain" />
+                <img src="/wisdom_logo.png" alt="Wisdom Logo" className="h-28 max-w-none w-auto object-contain" />
               </div>
               {links.map((l, i) => (
                 <motion.a
