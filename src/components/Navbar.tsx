@@ -19,8 +19,8 @@ export default function Navbar() {
       <header className="absolute top-0 left-0 right-0 z-50 bg-transparent">
         <nav className="max-w-[1280px] mx-auto px-6 min-h-[120px] py-4 flex items-center justify-between">
           {/* Logo Lockup */}
-          <a href="#home" className="flex items-center gap-3 group">
-            <img src="/wisdom_logo.png" alt="Wisdom Logo" className="h-28 max-w-none w-auto object-contain" />
+          <a href="#home" className="flex items-center gap-3 group overflow-visible relative">
+            <img src="/wisdom_logo.png" alt="Wisdom Logo" className="w-[100px] h-[100px] object-cover object-center scale-150 transform z-10 max-w-none" />
           </a>
 
           {/* Nav Links */}
