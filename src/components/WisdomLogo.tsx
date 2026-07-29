@@ -1,41 +1,54 @@
-// Wisdom Students official logo — two speech bubbles (pink + blue)
-export function WisdomLogo({ className = '' }: { className?: string }) {
+// Wisdom Students official logo — exact match of the two speech bubble mark
+// Pink bubble (left/front) + Blue bubble (right/back)
+
+interface WisdomLogoMarkProps {
+  size?: number
+  className?: string
+}
+
+export function WisdomLogoMark({ size = 48, className = '' }: WisdomLogoMarkProps) {
   return (
     <svg
-      className={className}
-      viewBox="0 0 56 42"
+      width={size}
+      height={size * 0.8}
+      viewBox="0 0 60 48"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      aria-label="Wisdom Students Logo"
+      className={className}
+      aria-label="Wisdom Students logo mark"
     >
-      {/* Pink speech bubble (left) */}
-      <rect x="0" y="0" width="24" height="28" rx="5" fill="#FF3E8A" />
-      <path d="M4 28 L4 36 L12 28 Z" fill="#FF3E8A" />
+      {/* Blue speech bubble — back / right */}
+      <rect x="22" y="0" width="34" height="30" rx="6" fill="#4DA8FF" />
+      <path d="M50 30 L56 40 L42 30 Z" fill="#4DA8FF" />
 
-      {/* Blue speech bubble (right) */}
-      <rect x="32" y="0" width="24" height="28" rx="5" fill="#4DA8FF" />
-      <path d="M52 28 L52 36 L44 28 Z" fill="#4DA8FF" />
+      {/* Pink speech bubble — front / left */}
+      <rect x="4" y="6" width="34" height="30" rx="6" fill="#FF3E8A" />
+      <path d="M8 36 L2 46 L20 36 Z" fill="#FF3E8A" />
 
-      {/* Notch / cutout on pink bubble bottom-right */}
-      <rect x="18" y="18" width="8" height="10" rx="2" fill="#08111F" />
-
-      {/* Notch / cutout on blue bubble bottom-left */}
-      <rect x="30" y="18" width="8" height="10" rx="2" fill="#08111F" />
+      {/* Small white gap between the two bubbles for clarity */}
+      <rect x="21" y="5" width="3" height="32" rx="1" fill="transparent" />
     </svg>
   )
 }
 
-export function WisdomWordmark() {
+export function WisdomWordmark({ dark = false }: { dark?: boolean }) {
   return (
     <div className="flex items-center gap-2.5">
-      <WisdomLogo className="w-10 h-8" />
-      <div className="flex flex-col leading-none">
-        <span className="text-white font-black text-sm tracking-wider">
-          WISD<span className="text-primary">O</span>M{' '}
-          <span className="text-secondary">st</span>
-          <span className="text-white">udents</span>
-        </span>
-        <span className="text-[10px] text-text-muted font-bold tracking-widest uppercase mt-0.5">
+      <WisdomLogoMark size={44} />
+      <div className="flex flex-col leading-none gap-0.5">
+        <div className="flex items-baseline gap-0">
+          <span className={`font-black text-sm tracking-tight ${dark ? 'text-slate-900' : 'text-white'}`}>
+            WISD
+          </span>
+          {/* Eye / O mark */}
+          <span className="text-sm font-black text-primary">O</span>
+          <span className={`font-black text-sm tracking-tight ${dark ? 'text-slate-900' : 'text-white'}`}>
+            M{' '}
+          </span>
+          <span className="font-black text-sm text-secondary">st</span>
+          <span className={`font-black text-sm ${dark ? 'text-slate-900' : 'text-white'}`}>udents</span>
+        </div>
+        <span className={`text-[9px] font-bold tracking-widest uppercase ${dark ? 'text-slate-500' : 'text-slate-400'}`}>
           Kozhikode North District
         </span>
       </div>

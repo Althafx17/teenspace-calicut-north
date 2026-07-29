@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { WisdomWordmark } from '@/components/WisdomLogo'
+import { WisdomLogoMark } from '@/components/WisdomLogo'
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -26,8 +26,17 @@ export default function Navbar() {
     <>
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'glass-nav py-4 shadow-lg' : 'bg-transparent py-6'}`}>
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-          <a href="#home" className="group hover:opacity-90 transition-opacity">
-            <WisdomWordmark />
+          <a href="#home" className="group hover:opacity-90 transition-opacity flex items-center gap-2.5">
+            <WisdomLogoMark size={38} />
+            <div className="flex flex-col leading-none gap-0.5">
+              <p className="font-black text-xs tracking-tight text-white">
+                WISD<span className="text-primary">O</span>M{' '}
+                <span className="text-secondary">st</span>udents
+              </p>
+              <p className="text-[9px] font-bold tracking-widest uppercase text-slate-400">
+                Kozhikode North
+              </p>
+            </div>
           </a>
 
           <div className="hidden md:flex items-center gap-8">
@@ -70,8 +79,15 @@ export default function Navbar() {
             className="fixed inset-0 z-40 bg-bg-dark/95 backdrop-blur-lg flex flex-col justify-center px-8 md:hidden"
           >
             <div className="flex flex-col gap-6 text-center">
-              <div className="flex justify-center mb-4">
-                <WisdomWordmark />
+              <div className="flex justify-center mb-4 items-center gap-2.5">
+                <WisdomLogoMark size={38} />
+                <div className="flex flex-col leading-none gap-0.5">
+                  <p className="font-black text-sm text-white">
+                    WISD<span className="text-primary">O</span>M{' '}
+                    <span className="text-secondary">st</span>udents
+                  </p>
+                  <p className="text-[9px] font-bold tracking-widest uppercase text-slate-400">Kozhikode North</p>
+                </div>
               </div>
               {navLinks.map((link, index) => (
                 <motion.a

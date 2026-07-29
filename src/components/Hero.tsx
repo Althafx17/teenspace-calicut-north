@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
-import { Play, ArrowRight } from 'lucide-react'
+import { ArrowRight, Calendar, MapPin } from 'lucide-react'
+import { WisdomLogoMark } from '@/components/WisdomLogo'
 
 export default function Hero() {
   const particles = Array.from({ length: 15 }, (_, i) => ({
@@ -13,63 +14,170 @@ export default function Hero() {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-bg-dark pt-20">
+      {/* Background */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&q=80&w=1600"
-          alt="TEENSPACE auditorium background"
-          className="absolute inset-0 w-full h-full object-cover opacity-15 mix-blend-overlay"
+          src="/WhatsApp Image 2026-07-19 at 4.15.20 PM.jpeg"
+          alt="Teenspace conference background"
+          className="absolute inset-0 w-full h-full object-cover opacity-20"
         />
-        <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full bg-primary/20 blur-[100px] pointer-events-none" />
-        <div className="absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 w-80 h-80 rounded-full bg-secondary/20 blur-[100px] pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-t from-bg-dark via-bg-dark/80 to-bg-dark/40" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-primary/20 blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-secondary/20 blur-[120px] pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-bg-dark via-bg-dark/75 to-bg-dark/30" />
       </div>
 
+      {/* Floating particles */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         {particles.map((p) => (
           <motion.div
             key={p.id}
             className="absolute rounded-full bg-secondary/30 blur-sm"
             style={{ width: p.size, height: p.size, left: `${p.x}%`, top: `${p.y}%` }}
-            animate={{ y: [0, -100, 0], x: [0, Math.random() * 40 - 20, 0], opacity: [0.2, 0.7, 0.2] }}
+            animate={{ y: [0, -80, 0], opacity: [0.2, 0.7, 0.2] }}
             transition={{ duration: p.duration, repeat: Infinity, delay: p.delay, ease: 'easeInOut' }}
           />
         ))}
       </div>
 
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center mt-12">
-        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: 'easeOut' }} className="flex flex-col gap-2 md:gap-4">
-          <span className="text-secondary text-sm md:text-base font-bold tracking-widest uppercase">
-            OCTOBER 21, 2026 • KOZHIKODE
-          </span>
-          <h1 className="text-5xl md:text-8xl font-black tracking-tight leading-tight mt-2">
-            <span className="text-primary block">KOZHIKODE NORTH</span>
-            <span className="text-secondary block mt-1">WISDOM STUDENTS</span>
-            <span className="text-white block mt-1">TEENSPACE</span>
-          </h1>
-          <p className="max-w-2xl mx-auto text-slate-300 text-base md:text-xl font-medium leading-relaxed mt-6">
-            വിജ്ഞാനവും നേതൃത്വപാടവവും ഇസ്ലാമിക മൂല്യങ്ങളും ഉയർത്തിപ്പിടിച്ച്, വിദ്യാർത്ഥി സമൂഹത്തെ നന്മയുടെ പാതയിൽ ശാക്തീകരിക്കുന്നു.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-5 mt-10">
-            <a href="#register" className="group flex items-center gap-2 px-8 py-4 rounded-full text-base font-bold bg-gradient-to-r from-primary to-secondary text-white shadow-xl hover:-translate-y-1 transition-all duration-300">
+      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          className="flex flex-col items-center gap-4"
+        >
+          {/* Wisdom Students branding badge */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2 }}
+            className="flex items-center gap-3 px-5 py-2.5 rounded-full glass-card border border-white/10 mb-2"
+          >
+            <WisdomLogoMark size={28} />
+            <div className="text-left">
+              <p className="text-white font-black text-xs tracking-widest leading-none">
+                WISD<span className="text-primary">O</span>M <span className="text-secondary">st</span>udents
+              </p>
+              <p className="text-slate-400 text-[9px] font-bold tracking-widest uppercase">
+                Kozhikode North District
+              </p>
+            </div>
+            <div className="w-px h-6 bg-white/10 mx-1" />
+            <span className="text-xs font-bold text-secondary tracking-wider">PRESENTS</span>
+          </motion.div>
+
+          {/* TEENSPACE — main title */}
+          <div className="relative">
+            {/* Decorative speech bubble 't' letter like the real logo */}
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.7 }}
+              className="text-[clamp(4rem,15vw,9rem)] font-black tracking-tight leading-none select-none"
+            >
+              <span className="text-white">t</span>
+              <span className="inline-block relative">
+                <span className="text-primary">e</span>
+                {/* The 'e' has a speech bubble cutout — just style */}
+              </span>
+              <span className="text-secondary">e</span>
+              <span className="text-white">nspace</span>
+            </motion.h1>
+
+            {/* Glow behind title */}
+            <div className="absolute inset-0 blur-[60px] opacity-20 pointer-events-none">
+              <span className="text-[clamp(4rem,15vw,9rem)] font-black text-primary">teenspace</span>
+            </div>
+          </div>
+
+          {/* Subtitle line */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+            className="flex flex-col items-center gap-1 mt-1"
+          >
+            <p className="text-slate-200 text-lg md:text-2xl font-black tracking-[0.3em] uppercase">
+              WISDOM STUDENTS
+            </p>
+            <p className="text-secondary text-base md:text-xl font-black tracking-[0.4em] uppercase">
+              KOZHIKODE
+            </p>
+            <div className="w-16 h-0.5 bg-gradient-to-r from-primary to-secondary rounded-full mt-2" />
+          </motion.div>
+
+          {/* Tag line */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6 }}
+            className="text-slate-400 text-sm md:text-base font-semibold tracking-wider mt-2"
+          >
+            SECONDARY STUDENTS CONFERENCE
+          </motion.p>
+
+          {/* Event meta */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7 }}
+            className="flex flex-wrap items-center justify-center gap-4 mt-4"
+          >
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full glass-card border border-white/10">
+              <Calendar className="w-4 h-4 text-primary" />
+              <span className="text-white font-bold text-sm">OCTOBER 21, 2026</span>
+            </div>
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full glass-card border border-white/10">
+              <MapPin className="w-4 h-4 text-secondary" />
+              <span className="text-white font-bold text-sm">KOZHIKODE NORTH</span>
+            </div>
+          </motion.div>
+
+          {/* CTA Buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.85 }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8"
+          >
+            <a
+              href="#register"
+              className="group flex items-center gap-2 px-8 py-4 rounded-full text-base font-bold bg-gradient-to-r from-primary to-secondary text-white shadow-2xl hover:-translate-y-1 transition-all duration-300"
+            >
               Register Now
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
-            <button
-              onClick={() => document.getElementById('highlights')?.scrollIntoView({ behavior: 'smooth' })}
-              className="flex items-center gap-3 px-6 py-4 rounded-full text-base font-semibold text-white hover:text-secondary transition-colors group"
+            <a
+              href="#highlights"
+              className="flex items-center gap-2 px-8 py-4 rounded-full text-base font-semibold text-white glass-card border border-white/10 hover:border-secondary/40 hover:text-secondary transition-all duration-300"
             >
-              <div className="w-10 h-10 rounded-full bg-surface-dark flex items-center justify-center border border-white/10 group-hover:border-secondary/40 shadow-md transition-all">
-                <Play className="w-4 h-4 text-white fill-white group-hover:text-secondary group-hover:fill-secondary transition-colors ml-0.5" />
-              </div>
-              Watch Promo
-            </button>
-          </div>
+              View Gallery
+            </a>
+          </motion.div>
+
+          {/* For +1 & +2 only badge */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1 }}
+            className="flex items-center gap-2 mt-4 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/30"
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+            <span className="text-xs text-primary font-bold tracking-wider">
+              FOR PLUS ONE & PLUS TWO STUDENTS ONLY
+            </span>
+          </motion.div>
         </motion.div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1.5 opacity-60">
-        <span className="text-xs uppercase tracking-widest text-text-muted">Scroll Down</span>
-        <motion.div animate={{ y: [0, 6, 0] }} transition={{ repeat: Infinity, duration: 1.5, ease: 'easeInOut' }} className="w-1 h-3 rounded-full bg-secondary" />
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 opacity-50">
+        <span className="text-[10px] uppercase tracking-widest text-text-muted">Scroll</span>
+        <motion.div
+          animate={{ y: [0, 6, 0] }}
+          transition={{ repeat: Infinity, duration: 1.5, ease: 'easeInOut' }}
+          className="w-1 h-4 rounded-full bg-gradient-to-b from-primary to-secondary"
+        />
       </div>
     </section>
   )

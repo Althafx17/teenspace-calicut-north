@@ -1,5 +1,5 @@
 import { ArrowUp } from 'lucide-react'
-import { WisdomWordmark } from '@/components/WisdomLogo'
+import { WisdomLogoMark } from '@/components/WisdomLogo'
 
 export default function Footer() {
   const quickLinks = [
@@ -15,8 +15,17 @@ export default function Footer() {
     <footer className="bg-[#040810] border-t border-white/5 pt-16 pb-8 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 mb-12">
         <div className="md:col-span-5 flex flex-col items-start gap-4">
-          <a href="#home">
-            <WisdomWordmark />
+          <a href="#home" className="flex items-center gap-2.5">
+            <WisdomLogoMark size={42} />
+            <div className="flex flex-col leading-none gap-1">
+              <p className="font-black text-sm text-white tracking-tight">
+                WISD<span className="text-primary">O</span>M{' '}
+                <span className="text-secondary">st</span>udents
+              </p>
+              <p className="text-[9px] font-bold tracking-widest uppercase text-slate-400">
+                Kozhikode North District
+              </p>
+            </div>
           </a>
           <p className="text-xs text-text-muted leading-relaxed max-w-sm mt-2">
             Plus One, Plus Two വിദ്യാർത്ഥികളുടെ സർവതോമുഖ വളർച്ചക്കായി — ധാർമ്മിക ബോധം, വിജ്ഞാനം, നേതൃത്വം, സാഹോദര്യം എന്നിവ ഉയർത്തിപ്പിടിച്ച്, കോഴിക്കോട് നോർത്ത് Wisdom Students ഈ ഒക്ടോബർ 21-ന് ഒരു ഗ്രാൻഡ് കോൺഫറൻസ് ഒരുക്കുന്നു.
