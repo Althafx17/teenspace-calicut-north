@@ -22,13 +22,26 @@ export default function Registration() {
     setStatus('loading')
     const url = (import.meta as any).env?.VITE_APPS_SCRIPT_URL || 'https://script.google.com/macros/s/YOUR-SCRIPT-ID/exec'
     try {
-      const res = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(data) })
-      const json = await res.json()
-      if (json.status === 'success' || res.ok) { setStatus('success'); reset() }
-      else throw new Error(json.message || 'Submission failed.')
+      await fetch(url, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'text/plain;charset=utf-8',
+        },
+        body: JSON.stringify(data),
+      })
+      setStatus('success')
+      reset()
     } catch (e: unknown) {
-      if (url.includes('YOUR-SCRIPT-ID')) { setTimeout(() => { setStatus('success'); reset() }, 1200) }
-      else { setStatus('error'); setErrMsg(e instanceof Error ? e.message : 'Something went wrong.') }
+      if (url.includes('YOUR-SCRIPT-ID')) {
+        setTimeout(() => {
+          setStatus('success')
+          reset()
+        }, 1200)
+      } else {
+        setStatus('error')
+        setErrMsg(e instanceof Error ? e.message : 'Something went wrong.')
+      }
     }
   }
 
