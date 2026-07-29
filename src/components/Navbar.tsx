@@ -1,117 +1,100 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { WisdomLogoMark } from '@/components/WisdomLogo'
 
 export default function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [open, setOpen] = useState(false)
 
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20)
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
-  const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Gallery', href: '#highlights' },
-    { name: 'Speakers', href: '#speakers' },
-    { name: 'Timeline', href: '#timeline' },
-    { name: 'Contact', href: '#contact' },
+  const links = [
+    { label: 'About',     href: '#about'      },
+    { label: 'Gallery',   href: '#highlights'  },
+    { label: 'Speakers',  href: '#speakers'    },
+    { label: 'Timeline',  href: '#timeline'    },
+    { label: 'FAQ',       href: '#faq'         },
+    { label: 'Contact',   href: '#contact'     },
   ]
 
   return (
     <>
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'glass-nav py-4 shadow-lg' : 'bg-transparent py-6'}`}>
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-          <a href="#home" className="group hover:opacity-90 transition-opacity flex items-center gap-2.5">
-            <WisdomLogoMark size={38} />
+      <header className="absolute top-0 left-0 right-0 z-50 bg-transparent">
+        <nav className="max-w-[1280px] mx-auto px-6 h-20 flex items-center justify-between">
+          {/* Logo Lockup */}
+          <a href="#home" className="flex items-center gap-3 group">
+            <WisdomLogoMark size={32} />
             <div className="flex flex-col leading-none gap-0.5">
-              <p className="font-black text-xs tracking-tight text-white">
-                WISD<span className="text-primary">O</span>M{' '}
-                <span className="text-secondary">st</span>udents
-              </p>
-              <p className="text-[9px] font-bold tracking-widest uppercase text-slate-400">
-                Kozhikode North
-              </p>
+              <span className="text-white font-medium text-[15px] uppercase tracking-[0.05em]">
+                Teenspace
+              </span>
+              <span className="text-[9px] text-[#9a9a9a] font-mono tracking-widest uppercase">
+                Wisdom Students
+              </span>
             </div>
           </a>
 
+          {/* Nav Links */}
           <div className="hidden md:flex items-center gap-8">
-            <div className="flex items-center gap-6">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className="text-text-muted hover:text-white transition-colors duration-200 text-sm font-medium relative py-1 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-secondary after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300"
-                >
-                  {link.name}
-                </a>
-              ))}
-            </div>
-            <a
-              href="#register"
-              className="px-6 py-2.5 rounded-full text-sm font-semibold bg-gradient-to-r from-primary to-secondary text-white shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300"
-            >
+            {links.map(l => (
+              <a
+                key={l.label}
+                href={l.href}
+                className="text-[14px] uppercase font-semibold tracking-[0.025em] text-[#9a9a9a] hover:text-white transition-colors duration-150"
+              >
+                {l.label}
+              </a>
+            ))}
+          </div>
+
+          {/* Primary Action Button (Violet Pill) */}
+          <div className="hidden md:flex">
+            <a href="#register" className="btn-iris text-[13px] !py-3 !px-6">
               Register Now
             </a>
           </div>
 
+          {/* Mobile Menu Toggle */}
           <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle navigation menu"
-            className="md:hidden p-2 text-white hover:text-primary transition-colors"
+            onClick={() => setOpen(!open)}
+            className="md:hidden text-[#9a9a9a] hover:text-white transition-colors p-1"
+            aria-label="Toggle menu"
           >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {open ? <X size={20} /> : <Menu size={20} />}
           </button>
-        </div>
-      </nav>
+        </nav>
+      </header>
 
+      {/* Mobile Menu */}
       <AnimatePresence>
-        {isMobileMenuOpen && (
+        {open && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-bg-dark/95 backdrop-blur-lg flex flex-col justify-center px-8 md:hidden"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.15 }}
+            className="fixed inset-0 z-40 bg-void flex flex-col justify-center px-8 md:hidden"
           >
-            <div className="flex flex-col gap-6 text-center">
-              <div className="flex justify-center mb-4 items-center gap-2.5">
-                <WisdomLogoMark size={38} />
-                <div className="flex flex-col leading-none gap-0.5">
-                  <p className="font-black text-sm text-white">
-                    WISD<span className="text-primary">O</span>M{' '}
-                    <span className="text-secondary">st</span>udents
-                  </p>
-                  <p className="text-[9px] font-bold tracking-widest uppercase text-slate-400">Kozhikode North</p>
-                </div>
+            <div className="flex flex-col gap-8">
+              <div className="flex justify-center mb-6">
+                <WisdomLogoMark size={48} />
               </div>
-              {navLinks.map((link, index) => (
+              {links.map((l, i) => (
                 <motion.a
-                  key={link.name}
+                  key={l.label}
+                  href={l.href}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.05 }}
-                  href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-2xl font-bold text-text-muted hover:text-white transition-colors"
+                  transition={{ delay: i * 0.04 }}
+                  onClick={() => setOpen(false)}
+                  className="text-3xl font-normal text-[#9a9a9a] hover:text-white transition-colors tracking-tight text-center"
                 >
-                  {link.name}
+                  {l.label}
                 </motion.a>
               ))}
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: navLinks.length * 0.05 }}
-                className="mt-6"
-              >
+              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.255 }} className="flex justify-center mt-6">
                 <a
                   href="#register"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="inline-block px-10 py-4 rounded-full text-lg font-bold bg-gradient-to-r from-primary to-secondary text-white shadow-xl transition-all duration-300"
+                  onClick={() => setOpen(false)}
+                  className="btn-iris text-base px-8 py-4 w-full max-w-[280px] text-center justify-center"
                 >
                   Register Now
                 </a>

@@ -1,44 +1,63 @@
 import { useCountdown } from '@/hooks/useCountdown'
 import { motion } from 'framer-motion'
-import { BellRing } from 'lucide-react'
 
 export default function Countdown() {
   const { days, hours, minutes, seconds, isExpired } = useCountdown('2026-10-21T09:00:00')
-
   const blocks = [
-    { label: 'Days', value: days },
-    { label: 'Hours', value: hours },
-    { label: 'Minutes', value: minutes },
-    { label: 'Seconds', value: seconds },
+    { v: days,    l: 'days'    },
+    { v: hours,   l: 'hours'   },
+    { v: minutes, l: 'minutes' },
+    { v: seconds, l: 'seconds' },
   ]
 
   return (
-    <section className="py-20 bg-bg-dark relative overflow-hidden">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-gradient-to-r from-primary/10 to-secondary/10 rounded-full blur-[100px] pointer-events-none" />
-      <div className="max-w-5xl mx-auto px-6 relative z-10 text-center">
-        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900 border border-white/5 text-secondary text-xs font-bold tracking-widest uppercase mb-6">
-          <BellRing className="w-3.5 h-3.5 animate-bounce text-primary" />
-          COUNTDOWN TO THE BIG DAY
-        </motion.div>
-        <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="text-3xl md:text-5xl font-black text-white tracking-tight mb-12">
-          The TEENSPACE Begins In
-        </motion.h2>
-        {isExpired ? (
-          <div className="glass-card p-10 rounded-3xl max-w-xl mx-auto">
-            <h3 className="text-2xl md:text-3xl font-extrabold text-transparent bg-gradient-to-r from-primary to-secondary bg-clip-text">The TEENSPACE has begun!</h3>
-            <p className="text-text-muted mt-2 text-sm">Join us live or watch our updates at Kozhikode North.</p>
-          </div>
-        ) : (
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
-            {blocks.map((block, idx) => (
-              <motion.div key={idx} initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: idx * 0.1 }} className="glass-card rounded-2xl p-6 md:p-8 flex flex-col items-center justify-center relative overflow-hidden group shadow-lg">
-                <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-primary to-secondary opacity-50 group-hover:opacity-100 transition-opacity" />
-                <span className="text-5xl md:text-7xl font-black tracking-tight text-white mb-2 font-mono tabular-nums">
-                  {String(block.value).padStart(2, '0')}
+    <section className="bg-void py-32 border-t border-[#111111]">
+      <div className="max-w-[1280px] mx-auto px-6 text-center">
+        
+        {/* Header */}
+        <div className="mb-16">
+          <span className="tag-saffron mb-4">countdown</span>
+          <motion.h2
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="font-display text-white dala-heading-lg mt-4"
+          >
+            {isExpired ? 'The event has started.' : 'The conference begins in.'}
+          </motion.h2>
+        </div>
+
+        {!isExpired && (
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto pt-6">
+            {blocks.map((b, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                className="flex flex-col items-center justify-center p-6 bg-transparent"
+              >
+                <span
+                  className="font-mono text-white tabular-nums tracking-[-0.04em]"
+                  style={{ fontSize: 'clamp(56px, 8vw, 96px)', fontWeight: 300, lineHeight: 1 }}
+                >
+                  {String(b.v).padStart(2, '0')}
                 </span>
-                <span className="text-xs md:text-sm font-black tracking-widest text-text-muted uppercase">{block.label}</span>
+                <span className="text-[12px] uppercase font-bold tracking-widest text-[#8052ff] mt-4">
+                  {b.l}
+                </span>
               </motion.div>
             ))}
+          </div>
+        )}
+
+        {isExpired && (
+          <div className="flex flex-col items-center gap-4">
+            <span className="tag-iris">live now</span>
+            <p className="text-[#bdbdbd] text-[18px] font-light max-w-sm">
+              We are live at Kozhikode North. Follow our updates.
+            </p>
           </div>
         )}
       </div>

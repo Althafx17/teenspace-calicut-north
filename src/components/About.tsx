@@ -1,86 +1,82 @@
-import { motion, useInView } from 'framer-motion'
-import { useRef, useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
 import { Compass, Eye, ShieldCheck } from 'lucide-react'
 
-function Counter({ value, suffix = '' }: { value: number; suffix?: string }) {
-  const [count, setCount] = useState(0)
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: '-50px' })
-
-  useEffect(() => {
-    if (!isInView) return
-    let start = 0
-    const steps = 50
-    const increment = value / steps
-    const timer = setInterval(() => {
-      start += increment
-      if (start >= value) { clearInterval(timer); setCount(value) }
-      else setCount(Math.floor(start))
-    }, 1200 / steps)
-    return () => clearInterval(timer)
-  }, [isInView, value])
-
-  return (
-    <span ref={ref} className="text-4xl md:text-5xl font-black bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-      {count}{suffix}
-    </span>
-  )
-}
+const blocks = [
+  {
+    icon: Compass,
+    title: 'Mission',
+    ml: 'ദൗത്യം',
+    body: 'Empowering Higher Secondary students through knowledge acquisition, character transformation, and social responsibility.',
+  },
+  {
+    icon: Eye,
+    title: 'Vision',
+    ml: 'ദർശനം',
+    body: 'A student generation built on moral integrity, leadership potential, and mutual brotherhood.',
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Objectives',
+    ml: 'ലക്ഷ്യങ്ങൾ',
+    body: 'Providing academic direction, fostering ethical standards, and conducting student development programs.',
+  },
+]
 
 export default function About() {
-  const stats = [
-    { value: 5000, suffix: '+', label: 'Students Empowered' },
-    { value: 100, suffix: '+', label: 'Volunteers Active' },
-    { value: 25, suffix: '+', label: 'Programs Executed' },
-    { value: 10, suffix: '+', label: 'Years of Service' },
-  ]
-
   return (
-    <section id="about" className="relative py-24 bg-bg-dark overflow-hidden">
-      <div className="absolute inset-0 opacity-[0.02] pointer-events-none z-0">
-        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="islamic-grid" width="80" height="80" patternUnits="userSpaceOnUse">
-              <path d="M 40,0 L 80,40 L 40,80 L 0,40 Z M 0,0 L 80,80 M 80,0 L 0,80" fill="none" stroke="white" strokeWidth="1" />
-              <circle cx="40" cy="40" r="10" fill="none" stroke="white" strokeWidth="1" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#islamic-grid)" />
-        </svg>
-      </div>
+    <section id="about" className="bg-void py-32 border-t border-[#111111]">
+      <div className="max-w-[1280px] mx-auto px-6">
+        
+        {/* Asymmetric Two-Column intro */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start mb-24">
+          
+          {/* Left: Headline block (occupied left half) */}
+          <div className="lg:col-span-6">
+            <span className="tag-saffron mb-4">who we are</span>
+            <motion.h2
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="font-display text-white dala-heading-lg mt-4"
+            >
+              Enlightening<br />young minds.
+            </motion.h2>
+          </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          <motion.div initial={{ opacity: 0, x: -35 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: '-100px' }} transition={{ duration: 0.6 }} className="lg:col-span-5">
-            <span className="text-primary text-xs md:text-sm font-extrabold tracking-widest uppercase">WHO WE ARE</span>
-            <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white mt-3 leading-tight">
-              About Kozhikode North <br /><span className="text-secondary">Wisdom Students</span>
-            </h2>
-            <p className="text-slate-300 mt-6 leading-relaxed text-sm md:text-base">
-              കോഴിക്കോട് നോർത്ത് പരിധിയിലെ ഹൈസ്കൂൾ, ഹയർ സെക്കൻഡറി, കോളേജ് തലങ്ങളിലെ വിദ്യാർത്ഥികളുടെ സർവതോമുഖമായ പുരോഗതിക്കായി പ്രവർത്തിക്കുന്ന വിദ്യാർത്ഥി സംഘടനയാണിത്. ധാർമ്മിക ബോധമുള്ള, ഉത്തരവാദിത്തമുള്ള, പ്രബുദ്ധരായ ഒരു വിദ്യാർത്ഥി തലമുറയെ വളർത്തിയെടുക്കുക എന്നതാണ് ഞങ്ങളുടെ ലക്ഷ്യം.
+          {/* Right: Body copy + details (occupied right half) */}
+          <div className="lg:col-span-6 lg:pt-14 flex flex-col gap-6">
+            <p className="text-[#bdbdbd] text-[18px] font-light leading-relaxed">
+              Kozhikode North Wisdom Students represents the Higher Secondary student wing — working actively across schools, colleges, and local areas to construct a morally grounded student community.
             </p>
-          </motion.div>
-
-          <motion.div initial={{ opacity: 0, x: 35 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: '-100px' }} transition={{ duration: 0.6, delay: 0.1 }} className="lg:col-span-7 grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              { Icon: Compass, color: 'bg-primary/10 text-primary', title: 'Mission', text: 'ഇസ്ലാമിക മൂല്യങ്ങളിൽ ഊന്നിയ വിജ്ഞാന സമ്പാദനത്തിലൂടെയും സാമൂഹിക സേവനത്തിലൂടെയും വിദ്യാർത്ഥി സമൂഹത്തെ ഉത്തമ സ്വഭാവഗുണമുള്ളവരാക്കി മാറ്റുക.' },
-              { Icon: Eye, color: 'bg-secondary/10 text-secondary', title: 'Vision', text: 'സദാചാരബോധമുള്ള, സാമൂഹിക പ്രതിബദ്ധതയുള്ള, പ്രബുദ്ധരായ ഒരു വിദ്യാർത്ഥി തലമുറയെ വളർത്തിയെടുക്കുക.' },
-              { Icon: ShieldCheck, color: 'bg-teal-500/10 text-teal-400', title: 'Objectives', text: 'ധാർമ്മിക സംസ്കരണം, വിജ്ഞാനവ്യാപനം, വ്യക്തിത്വ വികസനം, പരസ്പര സാഹോദര്യം എന്നിവ പ്രോത്സാഹിപ്പിക്കുക.' },
-            ].map(({ Icon, color, title, text }) => (
-              <div key={title} className="glass-card p-6 rounded-2xl flex flex-col gap-3">
-                <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${color}`}><Icon className="w-5 h-5" /></div>
-                <h3 className="text-lg font-bold text-white">{title}</h3>
-                <p className="text-xs text-text-muted leading-relaxed">{text}</p>
-              </div>
-            ))}
-          </motion.div>
+            <p className="text-[#9a9a9a] text-[16px] font-light leading-relaxed">
+              Through Teenspace 2026, we aim to bridge the gap between academic education and moral values, providing a healthy environment for intellectual and ethical development.
+            </p>
+          </div>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
-          {stats.map((stat, i) => (
-            <motion.div key={i} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-50px' }} transition={{ duration: 0.5, delay: i * 0.1 }} className="glass-card glass-card-hover p-6 rounded-2xl text-center flex flex-col items-center">
-              <Counter value={stat.value} suffix={stat.suffix} />
-              <span className="text-xs md:text-sm font-bold text-text-muted uppercase tracking-widest mt-2">{stat.label}</span>
+        {/* Three Columns - Floating layout (no cards, no borders, just whitespace) */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 pt-12 border-t border-[#111111]">
+          {blocks.map((b, i) => (
+            <motion.div
+              key={b.title}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="flex flex-col items-start gap-4"
+            >
+              <div className="flex items-center gap-3">
+                <span className="text-[#8052ff]">
+                  <b.icon size={18} />
+                </span>
+                <h3 className="text-white font-medium text-[20px] uppercase tracking-wide">
+                  {b.title}
+                </h3>
+                <span className="text-[12px] font-mono text-[#ffb829]">{b.ml}</span>
+              </div>
+              <p className="text-[#9a9a9a] text-[15px] font-light leading-relaxed">
+                {b.body}
+              </p>
             </motion.div>
           ))}
         </div>

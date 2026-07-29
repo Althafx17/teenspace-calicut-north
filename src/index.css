@@ -2,45 +2,156 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ─── Dala Design System Tokens ────────────────────────────────────── */
 :root {
+  --color-void:          #000000;
+  --color-white:         #ffffff;
+  --color-bone:          #ffffff;
+  --color-ash:           #9a9a9a;
+  --color-silver:        #bdbdbd;
+  --color-iris:          #8052ff;
+  --color-saffron:       #ffb829;
+  --color-verdant:       #15846e;
+
+  --radius-nav:    24px;
+  --radius-tag:    9999px;
+  --radius-card:   24px;
+  --radius-button: 24px;
+}
+
+/* ─── Reset & Base ────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
   scroll-behavior: smooth;
+  background-color: #000000;
 }
 
 body {
-  background-color: #08111F;
-  color: #FFFFFF;
-  font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+  background-color: #000000;
+  color: #ffffff;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 18px;
+  font-weight: 200; /* Ultra-light body copy signature */
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
 
-/* Glassmorphism utilities */
-.glass-nav {
-  background: rgba(8, 17, 31, 0.6);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+/* ─── Dala Typography ─────────────────────────────────────────────── */
+.font-display {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 400; /* Weight 400 for headers */
 }
 
-.glass-card {
-  background: rgba(15, 23, 42, 0.65);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+/* Outsized display text with aggressive negative tracking */
+.dala-display {
+  font-size: clamp(64px, 10vw, 113px);
+  line-height: 0.95;
+  letter-spacing: -4.52px;
 }
 
-.glass-card-hover {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+.dala-heading-lg {
+  font-size: clamp(48px, 7vw, 78px);
+  line-height: 1.05;
+  letter-spacing: -3.12px;
 }
 
-.glass-card-hover:hover {
-  transform: translateY(-5px);
-  border-color: rgba(77, 168, 255, 0.3);
-  box-shadow: 0 12px 40px 0 rgba(77, 168, 255, 0.15);
+.dala-heading-sm {
+  font-size: clamp(32px, 5vw, 42px);
+  line-height: 1.1;
+  letter-spacing: -1.68px;
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: #08111F; }
-::-webkit-scrollbar-thumb { background: rgba(255, 62, 138, 0.3); border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: rgba(255, 62, 138, 0.5); }
+/* ─── Buttons ──────────────────────────────────────────────────────── */
+.btn-iris {
+  background-color: #8052ff;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  padding: 14px 28px;
+  border-radius: var(--radius-button);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 150ms ease-out, background-color 150ms ease-out;
+  cursor: pointer;
+}
+.btn-iris:hover {
+  background-color: #6a3bf0;
+  transform: translateY(-1px);
+}
+.btn-iris:active {
+  transform: translateY(0);
+}
+
+.btn-ghost {
+  background: transparent;
+  border: none;
+  color: #9a9a9a;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  padding: 8px 16px;
+  transition: color 150ms ease-out;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.btn-ghost:hover {
+  color: #ffffff;
+}
+
+/* ─── Tags ────────────────────────────────────────────────────────── */
+.tag-iris {
+  border: 1px solid rgba(128, 82, 255, 0.3);
+  color: #8052ff;
+  background: rgba(128, 82, 255, 0.05);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 12px;
+  border-radius: var(--radius-tag);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tag-saffron {
+  border: 1px solid rgba(255, 184, 41, 0.3);
+  color: #ffb829;
+  background: rgba(255, 184, 41, 0.05);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 12px;
+  border-radius: var(--radius-tag);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ─── Scrollbar ────────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+::-webkit-scrollbar-thumb {
+  background: #8052ff;
+  border-radius: 2px;
+}
+
+/* ─── Selection ────────────────────────────────────────────────────── */
+::selection {
+  background: rgba(128, 82, 255, 0.3);
+  color: #ffffff;
+}
