@@ -89,14 +89,14 @@ export default function Contact() {
           {/* Right Column: Clean Map with 24px border-radius */}
           <div className="lg:col-span-7 h-[350px] lg:h-auto min-h-[350px] rounded-[24px] overflow-hidden border border-[#e2e8f0] relative">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125218.49071536663!2d75.72761614761036!3d11.267389279589715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba65938563d4747%3A0x321557147d0e1e58!2sKozhikode%2C%20Kerala!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin"
+              src="https://maps.google.com/maps?q=Vatakara%2C%20Nadapuram%2C%20Balussery%2C%20Kozhikode%20District&t=&z=10&ie=UTF8&iwloc=&output=embed"
               width="100%"
               height="100%"
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Kozhikode Map"
+              title="Kozhikode North Map"
               className="absolute inset-0 grayscale opacity-70 hover:opacity-95 hover:grayscale-0 transition-all duration-300"
             />
           </div>
