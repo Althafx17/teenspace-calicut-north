@@ -17,13 +17,13 @@ export default function Navbar() {
   return (
     <>
       <header className="absolute top-0 left-0 right-0 z-50 bg-transparent">
-        <nav className="max-w-[1280px] mx-auto px-6 min-h-[120px] py-4 flex items-center justify-between">
+        <nav className="max-w-[1280px] mx-auto px-6 min-h-[80px] py-2 flex items-center justify-between">
           {/* Logo Lockup */}
-          <a href="#home" className="flex items-center justify-center w-[160px] h-[64px] overflow-hidden relative">
+          <a href="#home" className="flex items-center justify-center w-[130px] h-[52px] overflow-hidden relative">
             <img 
               src="/TEENSPACE-01-2.png" 
               alt="Teenspace Logo" 
-              className="h-16 w-auto object-cover scale-[1.9] origin-center max-w-none" 
+              className="h-[52px] w-auto object-cover scale-[1.9] origin-center max-w-none" 
             />
           </a>
 
@@ -69,11 +69,11 @@ export default function Navbar() {
             className="fixed inset-0 z-40 bg-void flex flex-col justify-center px-8 md:hidden"
           >
             <div className="flex flex-col gap-8">
-              <div className="flex justify-center items-center w-[160px] h-[64px] mx-auto overflow-hidden relative mb-6">
+              <div className="flex justify-center items-center w-[130px] h-[52px] mx-auto overflow-hidden relative mb-6">
                 <img 
                   src="/TEENSPACE-01-2.png" 
                   alt="Teenspace Logo" 
-                  className="h-16 w-auto object-cover scale-[1.9] origin-center max-w-none" 
+                  className="h-[52px] w-auto object-cover scale-[1.9] origin-center max-w-none" 
                 />
               </div>
               {links.map((l, i) => (
