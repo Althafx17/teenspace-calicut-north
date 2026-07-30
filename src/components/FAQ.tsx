@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Plus, Minus } from 'lucide-react'
 
 const faqs = [
-  { q: 'Who can attend Teenspace 2026?',         a: 'Only Plus One (+1) and Plus Two (+2) students from schools and higher secondary institutions within Kozhikode North District.' },
+  { q: 'Who can attend Teenspace 2026?',         a: 'Only Higher Secondary students from schools and higher secondary institutions within Kozhikode North District.' },
   { q: 'Is there a registration fee?',           a: 'No. Registration and attendance is completely free for all selected delegates. No charges are collected at any stage.' },
   { q: 'Will everyone who registers get in?',    a: 'No — seats are limited. Selected delegates will be notified individually by phone or email after the review process.' },
   { q: 'When is the orientation session?',       a: 'October 10, 2026. Attendance is mandatory for all confirmed delegates. Venue details will be shared after selection.' },

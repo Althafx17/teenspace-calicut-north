@@ -29,7 +29,7 @@ export default function Hero() {
               Kozhikode North
             </span>
             <span className="px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-[#FF3E8A] bg-[#FF3E8A]/10 rounded-full">
-              +1 &amp; +2 Only
+              Higher Secondary
             </span>
           </motion.div>
 
@@ -55,7 +55,7 @@ export default function Hero() {
             {...fadeUp(0.15)}
             className="text-[#475569] text-[18px] font-normal leading-relaxed max-w-xl mb-10"
           >
-            An exclusive secondary students conference empowering Plus One and Plus Two youth with leadership, knowledge, brotherhood, and moral character.
+            An exclusive secondary students conference empowering Higher Secondary youth with leadership, knowledge, brotherhood, and moral character.
           </motion.p>
 
           {/* Call to Actions */}

@@ -5,7 +5,7 @@ const steps = [
     date: 'July 2026',
     title: 'Online Registration',
     ml: 'റെജിസ്ട്രേഷൻ',
-    desc: 'Registration portal opens for +1 and +2 students across Kozhikode North district.',
+    desc: 'Registration portal opens for Higher Secondary students across Kozhikode North district.',
   },
   {
     date: 'August / September 2026',

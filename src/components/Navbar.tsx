@@ -19,8 +19,22 @@ export default function Navbar() {
       <header className="absolute top-0 left-0 right-0 z-50 bg-transparent">
         <nav className="max-w-[1280px] mx-auto px-6 min-h-[120px] py-4 flex items-center justify-between">
           {/* Logo Lockup */}
-          <a href="#home" className="flex items-center gap-3 group overflow-visible relative">
-            <img src="/wisdom_logo.png" alt="Wisdom Logo" className="w-[100px] h-[100px] object-cover object-center scale-150 transform z-10 max-w-none" />
+          <a href="#home" className="flex items-center gap-3 group relative">
+            <div className="w-[50px] h-[50px] overflow-hidden relative flex-shrink-0">
+              <img 
+                src="/wisdom_logo.png" 
+                alt="Wisdom Logo" 
+                className="w-[100px] h-[50px] max-w-none absolute left-0 top-0 object-cover object-left" 
+              />
+            </div>
+            <div className="flex flex-col leading-none gap-0.5 select-none">
+              <span className="text-[#0f172a] font-extrabold text-[16px] tracking-tight uppercase">
+                WISDOM <span className="text-[#FF3E8A]">students</span>
+              </span>
+              <span className="text-[9px] text-[#475569] font-mono tracking-widest uppercase font-bold">
+                Kozhikode North
+              </span>
+            </div>
           </a>
 
           {/* Nav Links */}
@@ -65,8 +79,22 @@ export default function Navbar() {
             className="fixed inset-0 z-40 bg-void flex flex-col justify-center px-8 md:hidden"
           >
             <div className="flex flex-col gap-8">
-              <div className="flex justify-center mb-6">
-                <img src="/wisdom_logo.png" alt="Wisdom Logo" className="h-28 max-w-none w-auto object-contain" />
+              <div className="flex justify-center items-center gap-3 mb-6">
+                <div className="w-[50px] h-[50px] overflow-hidden relative flex-shrink-0">
+                  <img 
+                    src="/wisdom_logo.png" 
+                    alt="Wisdom Logo" 
+                    className="w-[100px] h-[50px] max-w-none absolute left-0 top-0 object-cover object-left" 
+                  />
+                </div>
+                <div className="flex flex-col leading-none gap-0.5 select-none text-left">
+                  <span className="text-[#0f172a] font-extrabold text-[16px] tracking-tight uppercase">
+                    WISDOM <span className="text-[#FF3E8A]">students</span>
+                  </span>
+                  <span className="text-[9px] text-[#475569] font-mono tracking-widest uppercase font-bold">
+                    Kozhikode North
+                  </span>
+                </div>
               </div>
               {links.map((l, i) => (
                 <motion.a

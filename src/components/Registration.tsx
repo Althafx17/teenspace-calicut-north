@@ -64,7 +64,7 @@ export default function Registration() {
             className="text-ash text-[14px] mt-3 flex items-center gap-2"
           >
             <span className="mono-label violet-text">eligible:</span>
-            Plus One &amp; Plus Two students only — Kozhikode North.
+            Higher Secondary students only — Kozhikode North.
           </motion.p>
         </div>
 

@@ -5,10 +5,21 @@ export default function Footer() {
         
         {/* Brand signature */}
         <div className="flex items-center gap-3">
-          <img src="/wisdom_logo.png" alt="Wisdom Logo" className="h-20 max-w-none w-auto object-contain" />
-          <span className="text-[#bdbdbd] text-[13px] font-mono tracking-wider uppercase">
-            Teenspace 2026 &mdash; Wisdom Students Kozhikode North
-          </span>
+          <div className="w-[40px] h-[40px] overflow-hidden relative flex-shrink-0">
+            <img 
+              src="/wisdom_logo.png" 
+              alt="Wisdom Logo" 
+              className="w-[80px] h-[40px] max-w-none absolute left-0 top-0 object-cover object-left" 
+            />
+          </div>
+          <div className="flex flex-col leading-none gap-0.5 select-none text-left">
+            <span className="text-[#0f172a] font-extrabold text-[14px] tracking-tight uppercase">
+              WISDOM <span className="text-[#FF3E8A]">students</span>
+            </span>
+            <span className="text-[9px] text-[#475569] font-mono tracking-widest uppercase font-bold">
+              Kozhikode North &mdash; Teenspace 2026
+            </span>
+          </div>
         </div>
 
         {/* Minimal Link list */}
