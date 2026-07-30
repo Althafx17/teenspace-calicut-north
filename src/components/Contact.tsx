@@ -7,9 +7,9 @@ const YtIcon = () => <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 2
 const WaIcon = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
 
 const contacts = [
-  { icon: MapPin, title: 'Our Location', value: 'Wisdom Centre, Kozhikode, Kerala - 673001', link: 'https://maps.google.com/?q=Wisdom+Centre+Kozhikode' },
-  { icon: Phone, title: 'Call / WhatsApp', value: '+91 98765 43210', link: 'tel:+919876543210' },
-  { icon: Mail, title: 'Email Support', value: 'info@wisdomstudentskozhikode.org', link: 'mailto:info@wisdomstudentskozhikode.org' },
+  { icon: MapPin, title: 'Our Location', value: 'Mujahid centre, Wisdom office kozhikode north district 673620', link: 'https://maps.google.com/?q=Mujahid+centre+Wisdom+office+kozhikode+north' },
+  { icon: Phone, title: 'Call / WhatsApp', value: '62823 97438, 95672 76017', link: 'tel:+916282397438' },
+  { icon: Mail, title: 'Email Support', value: 'wisdomstudentskkdnorth@gmail.com', link: 'mailto:wisdomstudentskkdnorth@gmail.com' },
 ]
 
 const socials = [
