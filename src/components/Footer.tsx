@@ -4,8 +4,12 @@ export default function Footer() {
       <div className="max-w-[1280px] mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
         
         {/* Brand signature */}
-        <div className="flex items-center gap-3">
-          <img src="/TEENSPACE-01-2.png" alt="Teenspace Logo" className="h-10 w-auto object-contain max-w-none" />
+        <div className="flex items-center justify-center w-[100px] h-[40px] overflow-hidden relative">
+          <img 
+            src="/TEENSPACE-01-2.png" 
+            alt="Teenspace Logo" 
+            className="h-10 w-auto object-cover scale-[1.9] origin-center max-w-none" 
+          />
         </div>
 
         {/* Minimal Link list */}

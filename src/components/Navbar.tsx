@@ -19,8 +19,12 @@ export default function Navbar() {
       <header className="absolute top-0 left-0 right-0 z-50 bg-transparent">
         <nav className="max-w-[1280px] mx-auto px-6 min-h-[120px] py-4 flex items-center justify-between">
           {/* Logo Lockup */}
-          <a href="#home" className="flex items-center gap-3 group relative">
-            <img src="/TEENSPACE-01-2.png" alt="Teenspace Logo" className="h-16 w-auto object-contain max-w-none" />
+          <a href="#home" className="flex items-center justify-center w-[160px] h-[64px] overflow-hidden relative">
+            <img 
+              src="/TEENSPACE-01-2.png" 
+              alt="Teenspace Logo" 
+              className="h-16 w-auto object-cover scale-[1.9] origin-center max-w-none" 
+            />
           </a>
 
           {/* Nav Links */}
@@ -65,8 +69,12 @@ export default function Navbar() {
             className="fixed inset-0 z-40 bg-void flex flex-col justify-center px-8 md:hidden"
           >
             <div className="flex flex-col gap-8">
-              <div className="flex justify-center items-center gap-3 mb-6">
-                <img src="/TEENSPACE-01-2.png" alt="Teenspace Logo" className="h-16 w-auto object-contain max-w-none" />
+              <div className="flex justify-center items-center w-[160px] h-[64px] mx-auto overflow-hidden relative mb-6">
+                <img 
+                  src="/TEENSPACE-01-2.png" 
+                  alt="Teenspace Logo" 
+                  className="h-16 w-auto object-cover scale-[1.9] origin-center max-w-none" 
+                />
               </div>
               {links.map((l, i) => (
                 <motion.a
