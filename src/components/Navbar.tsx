@@ -20,21 +20,7 @@ export default function Navbar() {
         <nav className="max-w-[1280px] mx-auto px-6 min-h-[120px] py-4 flex items-center justify-between">
           {/* Logo Lockup */}
           <a href="#home" className="flex items-center gap-3 group relative">
-            <div className="w-[50px] h-[50px] overflow-hidden relative flex-shrink-0">
-              <img 
-                src="/wisdom_logo.png" 
-                alt="Wisdom Logo" 
-                className="w-[100px] h-[50px] max-w-none absolute left-0 top-0 object-cover object-left" 
-              />
-            </div>
-            <div className="flex flex-col leading-none gap-0.5 select-none">
-              <span className="text-[#0f172a] font-extrabold text-[16px] tracking-tight uppercase">
-                WISDOM <span className="text-[#FF3E8A]">students</span>
-              </span>
-              <span className="text-[9px] text-[#475569] font-mono tracking-widest uppercase font-bold">
-                Kozhikode North
-              </span>
-            </div>
+            <img src="/TEENSPACE-01-2.png" alt="Teenspace Logo" className="h-16 w-auto object-contain max-w-none" />
           </a>
 
           {/* Nav Links */}
@@ -80,21 +66,7 @@ export default function Navbar() {
           >
             <div className="flex flex-col gap-8">
               <div className="flex justify-center items-center gap-3 mb-6">
-                <div className="w-[50px] h-[50px] overflow-hidden relative flex-shrink-0">
-                  <img 
-                    src="/wisdom_logo.png" 
-                    alt="Wisdom Logo" 
-                    className="w-[100px] h-[50px] max-w-none absolute left-0 top-0 object-cover object-left" 
-                  />
-                </div>
-                <div className="flex flex-col leading-none gap-0.5 select-none text-left">
-                  <span className="text-[#0f172a] font-extrabold text-[16px] tracking-tight uppercase">
-                    WISDOM <span className="text-[#FF3E8A]">students</span>
-                  </span>
-                  <span className="text-[9px] text-[#475569] font-mono tracking-widest uppercase font-bold">
-                    Kozhikode North
-                  </span>
-                </div>
+                <img src="/TEENSPACE-01-2.png" alt="Teenspace Logo" className="h-16 w-auto object-contain max-w-none" />
               </div>
               {links.map((l, i) => (
                 <motion.a
