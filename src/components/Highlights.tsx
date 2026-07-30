@@ -33,7 +33,7 @@ export default function Highlights() {
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.05 }}
-            className="font-normal text-white tracking-tight"
+            className="font-normal text-bone tracking-tight"
             style={{ fontSize: 'clamp(32px,5vw,56px)', letterSpacing: '-2px', lineHeight: 1.1 }}
           >
             From the ground.
@@ -48,9 +48,10 @@ export default function Highlights() {
 
         {/* ── Grid ──────────────────────────────────────────────────────
             Mobile  : 1 column — full-width list, images at natural ratio
-            Desktop : 2 columns — side by side, images at natural ratio
+            Tablet  : 2 columns
+            Desktop : 3 columns
         ─────────────────────────────────────────────────────────────── */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-graphite border border-graphite rounded-card overflow-hidden">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-graphite border border-graphite rounded-card overflow-hidden">
           {images.map((img, i) => (
             <motion.div
               key={i}

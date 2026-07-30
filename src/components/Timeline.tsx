@@ -35,7 +35,7 @@ const steps = [
 
 export default function Timeline() {
   return (
-    <section id="timeline" className="bg-void py-32 border-t border-[#111111]">
+    <section id="timeline" className="bg-void py-32 border-t border-[#e2e8f0]">
       <div className="max-w-[1280px] mx-auto px-6">
         
         {/* Asymmetric Layout */}
@@ -48,11 +48,11 @@ export default function Timeline() {
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="font-display text-white dala-heading-lg mt-4"
+              className="font-display text-bone dala-heading-lg mt-4"
             >
               The journey to Teenspace.
             </motion.h2>
-            <p className="text-[#9a9a9a] text-[15px] font-light mt-6 max-w-sm">
+            <p className="text-ash text-[15px] font-normal mt-6 max-w-sm">
               Key milestones from registration to the main event day and post-event follow-ups.
             </p>
           </div>
@@ -66,22 +66,22 @@ export default function Timeline() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.08 }}
-                className="flex gap-6 items-start border-b border-[#111111] pb-8 last:border-0 last:pb-0"
+                className="flex gap-6 items-start border-b border-[#e2e8f0] pb-8 last:border-0 last:pb-0"
               >
                 {/* Saffron spark indicator */}
-                <div className="w-2.5 h-2.5 rounded-full bg-[#ffb829] mt-2.5 flex-shrink-0" />
+                <div className="w-2.5 h-2.5 rounded-full bg-[#4DA8FF] mt-2.5 flex-shrink-0" />
                 
                 <div className="flex flex-col gap-2">
-                  <span className="text-[12px] font-mono uppercase font-bold tracking-wider text-[#8052ff]">
+                  <span className="text-[12px] font-mono uppercase font-bold tracking-wider text-[#FF3E8A]">
                     {s.date}
                   </span>
                   <div className="flex items-baseline gap-3">
-                    <h3 className="text-white font-medium text-[22px] tracking-tight">
+                    <h3 className="text-bone font-medium text-[22px] tracking-tight">
                       {s.title}
                     </h3>
-                    <span className="text-[12px] font-mono text-[#9a9a9a]">{s.ml}</span>
+                    <span className="text-[12px] font-mono text-ash">{s.ml}</span>
                   </div>
-                  <p className="text-[#9a9a9a] text-[16px] font-light leading-relaxed">
+                  <p className="text-ash text-[16px] font-normal leading-relaxed">
                     {s.desc}
                   </p>
                 </div>

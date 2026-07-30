@@ -5,9 +5,9 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { CheckCircle2, AlertTriangle, Loader2 } from 'lucide-react'
 import { registrationSchema, type RegistrationFormData } from '@/lib/schema'
 
-const inputCls = 'w-full px-3 py-2.5 rounded-[6px] border border-[#292d30] bg-[#000] text-bone text-[14px] font-normal placeholder:text-iron focus:outline-none focus:border-[#464a4d] transition-colors duration-150 font-mono'
+const inputCls = 'w-full px-3 py-2.5 rounded-[6px] border border-[#e2e8f0] bg-[#f8fafc] text-bone text-[14px] font-normal placeholder:text-iron focus:outline-none focus:border-[#cbd5e1] transition-colors duration-150 font-mono'
 const labelCls = 'block text-[12px] font-mono text-ash mb-1.5'
-const errorCls = 'text-[12px] font-mono alarm-text mt-1'
+const errorCls = 'text-[12px] font-mono text-[#ff9592] mt-1'
 
 export default function Registration() {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
@@ -54,7 +54,7 @@ export default function Registration() {
           <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="mono-label violet-text mb-3">register</motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-            className="font-normal text-white tracking-tight"
+            className="font-normal text-bone tracking-tight"
             style={{ fontSize: 'clamp(32px,5vw,56px)', letterSpacing: '-2px', lineHeight: 1.1 }}
           >
             Secure your seat.
@@ -78,14 +78,14 @@ export default function Registration() {
             {status === 'success' ? (
               <motion.div key="ok" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="py-12 flex flex-col items-center gap-4 text-center">
                 <CheckCircle2 size={36} className="pulse-text" />
-                <h3 className="text-white text-[20px] font-normal tracking-tight">Registration submitted.</h3>
+                <h3 className="text-bone text-[20px] font-normal tracking-tight">Registration submitted.</h3>
                 <p className="text-ash text-[14px] max-w-sm">We'll contact you via phone or email with the next steps.</p>
                 <button onClick={() => setStatus('idle')} className="btn-ghost mt-4 text-[13px]">Register another student</button>
               </motion.div>
             ) : (
               <motion.form key="form" onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 {status === 'error' && (
-                  <div className="md:col-span-2 flex items-center gap-2 p-3 rounded-[6px] border border-[#292d30] text-[13px] font-mono alarm-text">
+                  <div className="md:col-span-2 flex items-center gap-2 p-3 rounded-[6px] border border-[#e2e8f0] text-[13px] font-mono text-[#ff9592]">
                     <AlertTriangle size={14} /> {errMsg}
                   </div>
                 )}
@@ -159,7 +159,7 @@ export default function Registration() {
                 {/* Terms */}
                 <div className="md:col-span-2 flex flex-col gap-2">
                   <label className="flex items-start gap-3 cursor-pointer">
-                    <input id="agreeTerms" type="checkbox" className="mt-0.5 w-3.5 h-3.5 rounded-[3px] border border-graphite bg-void accent-violet" {...register('agreeTerms')} />
+                    <input id="agreeTerms" type="checkbox" className="mt-0.5 w-3.5 h-3.5 rounded-[3px] border border-graphite bg-void accent-[#FF3E8A]" {...register('agreeTerms')} />
                     <span className="text-[13px] font-mono text-ash leading-relaxed">
                       I agree to abide by the conference code of conduct and follow all instructions given by Wisdom Students Kozhikode North.
                     </span>

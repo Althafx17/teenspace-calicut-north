@@ -30,7 +30,7 @@ const pillars = [
 
 export default function Features() {
   return (
-    <section id="features" className="bg-void py-32 border-t border-[#111111]">
+    <section id="features" className="bg-void py-32 border-t border-[#e2e8f0]">
       <div className="max-w-[1280px] mx-auto px-6">
         
         {/* Asymmetric Intro */}
@@ -41,20 +41,20 @@ export default function Features() {
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="font-display text-white dala-heading-lg mt-4"
+              className="font-display text-bone dala-heading-lg mt-4"
             >
               The core values of Teenspace.
             </motion.h2>
           </div>
           <div className="lg:col-span-6 lg:pt-14">
-            <p className="text-[#bdbdbd] text-[18px] font-light leading-relaxed">
+            <p className="text-ash text-[18px] font-normal leading-relaxed">
               Teenspace 2026 focuses on four key pillars designed to cultivate well-rounded personalities, blending spiritual, academic, and social qualities.
             </p>
           </div>
         </div>
 
         {/* Pillars List — Spacious floating items with no grid borders or boxes */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 pt-12 border-t border-[#111111]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 pt-12 border-t border-[#e2e8f0]">
           {pillars.map((p, i) => (
             <motion.div
               key={p.title}
@@ -64,17 +64,17 @@ export default function Features() {
               transition={{ delay: i * 0.08 }}
               className="flex gap-6 items-start"
             >
-              <div className="w-12 h-12 rounded-full border border-[#222] flex items-center justify-center text-[#8052ff] flex-shrink-0">
+              <div className="w-12 h-12 rounded-full border border-[#e2e8f0] flex items-center justify-center text-[#FF3E8A] flex-shrink-0">
                 <p.icon size={18} />
               </div>
               <div className="flex flex-col gap-2">
                 <div className="flex items-baseline gap-3">
-                  <h3 className="text-white font-medium text-[20px] tracking-wide">
+                  <h3 className="text-bone font-medium text-[20px] tracking-wide">
                     {p.title}
                   </h3>
-                  <span className="text-[12px] font-mono text-[#ffb829]">{p.ml}</span>
+                  <span className="text-[12px] font-mono text-[#4DA8FF]">{p.ml}</span>
                 </div>
-                <p className="text-[#9a9a9a] text-[15px] font-light leading-relaxed">
+                <p className="text-ash text-[15px] font-normal leading-relaxed">
                   {p.desc}
                 </p>
               </div>

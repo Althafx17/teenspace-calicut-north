@@ -24,7 +24,7 @@ const blocks = [
 
 export default function About() {
   return (
-    <section id="about" className="bg-void py-32 border-t border-[#111111]">
+    <section id="about" className="bg-void py-32 border-t border-[#e2e8f0]">
       <div className="max-w-[1280px] mx-auto px-6">
         
         {/* Asymmetric Two-Column intro */}
@@ -37,7 +37,7 @@ export default function About() {
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="font-display text-white dala-heading-lg mt-4"
+              className="font-display text-bone dala-heading-lg mt-4"
             >
               Enlightening<br />young minds.
             </motion.h2>
@@ -45,17 +45,17 @@ export default function About() {
 
           {/* Right: Body copy + details (occupied right half) */}
           <div className="lg:col-span-6 lg:pt-14 flex flex-col gap-6">
-            <p className="text-[#bdbdbd] text-[18px] font-light leading-relaxed">
+            <p className="text-ash text-[18px] font-normal leading-relaxed">
               Kozhikode North Wisdom Students represents the Higher Secondary student wing — working actively across schools, colleges, and local areas to construct a morally grounded student community.
             </p>
-            <p className="text-[#9a9a9a] text-[16px] font-light leading-relaxed">
+            <p className="text-ash text-[16px] font-normal leading-relaxed">
               Through Teenspace 2026, we aim to bridge the gap between academic education and moral values, providing a healthy environment for intellectual and ethical development.
             </p>
           </div>
         </div>
 
         {/* Three Columns - Floating layout (no cards, no borders, just whitespace) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 pt-12 border-t border-[#111111]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 pt-12 border-t border-[#e2e8f0]">
           {blocks.map((b, i) => (
             <motion.div
               key={b.title}
@@ -66,15 +66,15 @@ export default function About() {
               className="flex flex-col items-start gap-4"
             >
               <div className="flex items-center gap-3">
-                <span className="text-[#8052ff]">
+                <span className="text-[#FF3E8A]">
                   <b.icon size={18} />
                 </span>
-                <h3 className="text-white font-medium text-[20px] uppercase tracking-wide">
+                <h3 className="text-bone font-medium text-[20px] uppercase tracking-wide">
                   {b.title}
                 </h3>
-                <span className="text-[12px] font-mono text-[#ffb829]">{b.ml}</span>
+                <span className="text-[12px] font-mono text-[#4DA8FF]">{b.ml}</span>
               </div>
-              <p className="text-[#9a9a9a] text-[15px] font-light leading-relaxed">
+              <p className="text-ash text-[15px] font-normal leading-relaxed">
                 {b.body}
               </p>
             </motion.div>

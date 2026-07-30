@@ -22,7 +22,7 @@ export default function FAQ() {
           <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="mono-label violet-text mb-3">faq</motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-            className="font-normal text-white tracking-tight"
+            className="font-normal text-bone tracking-tight"
             style={{ fontSize: 'clamp(32px,5vw,56px)', letterSpacing: '-2px', lineHeight: 1.1 }}
           >
             Common questions.
@@ -43,7 +43,7 @@ export default function FAQ() {
                 onClick={() => setOpen(open === i ? null : i)}
                 className="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-lift transition-colors duration-150 group"
               >
-                <span className="text-bone text-[15px] font-normal pr-6 group-hover:text-white transition-colors">{f.q}</span>
+                <span className="text-bone text-[15px] font-normal pr-6 group-hover:text-[#FF3E8A] transition-colors">{f.q}</span>
                 <span className="text-iron flex-shrink-0 transition-colors group-hover:text-ash">
                   {open === i ? <Minus size={14} /> : <Plus size={14} />}
                 </span>

@@ -29,7 +29,7 @@ export default function Navbar() {
               <a
                 key={l.label}
                 href={l.href}
-                className="text-[14px] uppercase font-semibold tracking-[0.025em] text-[#9a9a9a] hover:text-white transition-colors duration-150"
+                className="text-[14px] uppercase font-semibold tracking-[0.025em] text-[#475569] hover:text-[#0f172a] transition-colors duration-150"
               >
                 {l.label}
               </a>
@@ -46,7 +46,7 @@ export default function Navbar() {
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setOpen(!open)}
-            className="md:hidden text-[#9a9a9a] hover:text-white transition-colors p-1"
+            className="md:hidden text-[#475569] hover:text-[#0f172a] transition-colors p-1"
             aria-label="Toggle menu"
           >
             {open ? <X size={20} /> : <Menu size={20} />}
@@ -76,7 +76,7 @@ export default function Navbar() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.04 }}
                   onClick={() => setOpen(false)}
-                  className="text-3xl font-normal text-[#9a9a9a] hover:text-white transition-colors tracking-tight text-center"
+                  className="text-3xl font-normal text-[#475569] hover:text-[#0f172a] transition-colors tracking-tight text-center"
                 >
                   {l.label}
                 </motion.a>

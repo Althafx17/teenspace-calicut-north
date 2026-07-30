@@ -40,7 +40,7 @@ const speakers = [
 
 export default function Speakers() {
   return (
-    <section id="speakers" className="bg-void py-32 border-t border-[#111111]">
+    <section id="speakers" className="bg-void py-32 border-t border-[#e2e8f0]">
       <div className="max-w-[1280px] mx-auto px-6">
         
         {/* Header */}
@@ -50,7 +50,7 @@ export default function Speakers() {
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-display text-white dala-heading-lg mt-4"
+            className="font-display text-bone dala-heading-lg mt-4"
           >
             Scholars &amp; counselors.
           </motion.h2>
@@ -68,7 +68,7 @@ export default function Speakers() {
               className="flex flex-col items-start gap-4"
             >
               {/* Portrait: 24px corner radius */}
-              <div className="w-full aspect-square rounded-[24px] overflow-hidden bg-[#050505]">
+              <div className="w-full aspect-square rounded-[24px] overflow-hidden bg-[#f8fafc] border border-[#e2e8f0]">
                 <img
                   src={s.image}
                   alt={s.name}
@@ -79,13 +79,13 @@ export default function Speakers() {
 
               {/* Text metadata */}
               <div className="flex flex-col gap-1 w-full">
-                <span className="text-[12px] uppercase font-bold tracking-wider text-[#8052ff]">
+                <span className="text-[12px] uppercase font-bold tracking-wider text-[#FF3E8A]">
                   {s.role}
                 </span>
-                <h3 className="text-white font-medium text-[22px] tracking-tight">
+                <h3 className="text-bone font-medium text-[22px] tracking-tight">
                   {s.name}
                 </h3>
-                <p className="text-[#9a9a9a] text-[14px] font-light leading-relaxed mt-1">
+                <p className="text-ash text-[14px] font-normal leading-relaxed mt-1">
                   {s.bio}
                 </p>
               </div>
@@ -94,21 +94,21 @@ export default function Speakers() {
               <div className="flex items-center gap-4 mt-2">
                 <a
                   href={s.socials.youtube}
-                  className="text-[#9a9a9a] hover:text-white transition-colors"
+                  className="text-ash hover:text-[#0f172a] transition-colors"
                   aria-label="YouTube"
                 >
                   <YtIcon />
                 </a>
                 <a
                   href={s.socials.globe}
-                  className="text-[#9a9a9a] hover:text-white transition-colors"
+                  className="text-ash hover:text-[#0f172a] transition-colors"
                   aria-label="Website"
                 >
                   <Globe size={14} />
                 </a>
                 <a
                   href={s.socials.mail}
-                  className="text-[#9a9a9a] hover:text-white transition-colors"
+                  className="text-ash hover:text-[#0f172a] transition-colors"
                   aria-label="Email"
                 >
                   <Mail size={14} />

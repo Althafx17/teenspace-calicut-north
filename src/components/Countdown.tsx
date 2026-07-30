@@ -21,7 +21,7 @@ export default function Countdown() {
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-display text-white dala-heading-lg mt-4"
+            className="font-display text-bone dala-heading-lg mt-4"
           >
             {isExpired ? 'The event has started.' : 'The conference begins in.'}
           </motion.h2>
@@ -39,12 +39,12 @@ export default function Countdown() {
                 className="flex flex-col items-center justify-center p-6 bg-transparent"
               >
                 <span
-                  className="font-mono text-white tabular-nums tracking-[-0.04em]"
+                  className="font-mono text-bone tabular-nums tracking-[-0.04em]"
                   style={{ fontSize: 'clamp(56px, 8vw, 96px)', fontWeight: 300, lineHeight: 1 }}
                 >
                   {String(b.v).padStart(2, '0')}
                 </span>
-                <span className="text-[12px] uppercase font-bold tracking-widest text-[#8052ff] mt-4">
+                <span className="text-[12px] uppercase font-bold tracking-widest text-[#FF3E8A] mt-4">
                   {b.l}
                 </span>
               </motion.div>
@@ -55,7 +55,7 @@ export default function Countdown() {
         {isExpired && (
           <div className="flex flex-col items-center gap-4">
             <span className="tag-iris">live now</span>
-            <p className="text-[#bdbdbd] text-[18px] font-light max-w-sm">
+            <p className="text-ash text-[18px] font-light max-w-sm">
               We are live at Kozhikode North. Follow our updates.
             </p>
           </div>

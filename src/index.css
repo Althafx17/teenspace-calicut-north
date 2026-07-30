@@ -2,15 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ─── Dala Design System Tokens ────────────────────────────────────── */
+/* ─── Dala Design System Tokens (Light Theme Remap) ────────────────── */
 :root {
-  --color-void:          #000000;
-  --color-white:         #ffffff;
-  --color-bone:          #ffffff;
-  --color-ash:           #9a9a9a;
-  --color-silver:        #bdbdbd;
-  --color-iris:          #8052ff;
-  --color-saffron:       #ffb829;
+  --color-void:          #ffffff;
+  --color-white:         #0f172a;
+  --color-bone:          #1e293b;
+  --color-ash:           #475569;
+  --color-silver:        #64748b;
+  --color-iris:          #FF3E8A; /* Pink accent */
+  --color-saffron:       #4DA8FF; /* Blue accent */
   --color-verdant:       #15846e;
 
   --radius-nav:    24px;
@@ -24,15 +24,15 @@
 
 html {
   scroll-behavior: smooth;
-  background-color: #000000;
+  background-color: #ffffff;
 }
 
 body {
-  background-color: #000000;
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #0f172a;
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   font-size: 18px;
-  font-weight: 200; /* Ultra-light body copy signature */
+  font-weight: 300; /* Adjusted light font weight for best readability on white */
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -66,7 +66,7 @@ body {
 
 /* ─── Buttons ──────────────────────────────────────────────────────── */
 .btn-iris {
-  background-color: #8052ff;
+  background-color: #FF3E8A;
   color: #ffffff;
   font-weight: 600;
   font-size: 14px;
@@ -81,7 +81,7 @@ body {
   cursor: pointer;
 }
 .btn-iris:hover {
-  background-color: #6a3bf0;
+  background-color: #e02874;
   transform: translateY(-1px);
 }
 .btn-iris:active {
@@ -91,7 +91,7 @@ body {
 .btn-ghost {
   background: transparent;
   border: none;
-  color: #9a9a9a;
+  color: #475569;
   font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;
@@ -104,14 +104,14 @@ body {
   gap: 6px;
 }
 .btn-ghost:hover {
-  color: #ffffff;
+  color: #0f172a;
 }
 
 /* ─── Tags ────────────────────────────────────────────────────────── */
 .tag-iris {
-  border: 1px solid rgba(128, 82, 255, 0.3);
-  color: #8052ff;
-  background: rgba(128, 82, 255, 0.05);
+  border: 1px solid rgba(255, 62, 138, 0.3);
+  color: #FF3E8A;
+  background: rgba(255, 62, 138, 0.05);
   font-size: 12px;
   font-weight: 600;
   text-transform: uppercase;
@@ -124,9 +124,9 @@ body {
 }
 
 .tag-saffron {
-  border: 1px solid rgba(255, 184, 41, 0.3);
-  color: #ffb829;
-  background: rgba(255, 184, 41, 0.05);
+  border: 1px solid rgba(77, 168, 255, 0.3);
+  color: #4DA8FF;
+  background: rgba(77, 168, 255, 0.05);
   font-size: 12px;
   font-weight: 600;
   text-transform: uppercase;
@@ -143,15 +143,15 @@ body {
   width: 4px;
 }
 ::-webkit-scrollbar-track {
-  background: #000000;
+  background: #ffffff;
 }
 ::-webkit-scrollbar-thumb {
-  background: #8052ff;
+  background: #cbd5e1;
   border-radius: 2px;
 }
 
 /* ─── Selection ────────────────────────────────────────────────────── */
 ::selection {
-  background: rgba(128, 82, 255, 0.3);
-  color: #ffffff;
+  background: rgba(255, 62, 138, 0.15);
+  color: #0f172a;
 }

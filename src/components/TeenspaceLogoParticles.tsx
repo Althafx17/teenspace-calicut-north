@@ -179,7 +179,7 @@ export default function TeenspaceLogoParticles() {
 
     // Animation Loop
     const animate = () => {
-      ctx.fillStyle = '#000000'
+      ctx.fillStyle = '#ffffff'
       ctx.fillRect(0, 0, width, height)
 
       // Mouse interactive displacement (subtle)

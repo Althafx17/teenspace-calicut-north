@@ -21,7 +21,7 @@ const socials = [
 
 export default function Contact() {
   return (
-    <section id="contact" className="bg-void py-32 border-t border-[#111111]">
+    <section id="contact" className="bg-void py-32 border-t border-[#e2e8f0]">
       <div className="max-w-[1280px] mx-auto px-6">
         
         {/* Intro */}
@@ -31,7 +31,7 @@ export default function Contact() {
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-display text-white dala-heading-lg mt-4"
+            className="font-display text-bone dala-heading-lg mt-4"
           >
             Get in touch.
           </motion.h2>
@@ -51,14 +51,14 @@ export default function Contact() {
                   rel="noopener noreferrer"
                   className="flex gap-4 items-start group"
                 >
-                  <span className="text-[#8052ff] mt-1 group-hover:scale-105 transition-transform">
+                  <span className="text-[#FF3E8A] mt-1 group-hover:scale-105 transition-transform">
                     <c.icon size={18} />
                   </span>
                   <div className="flex flex-col">
-                    <span className="text-white font-medium text-[16px] uppercase tracking-wide">
+                    <span className="text-bone font-medium text-[16px] uppercase tracking-wide">
                       {c.title}
                     </span>
-                    <span className="text-[#9a9a9a] text-[15px] font-light leading-relaxed mt-1 group-hover:text-white transition-colors">
+                    <span className="text-ash text-[15px] font-normal leading-relaxed mt-1 group-hover:text-bone transition-colors">
                       {c.value}
                     </span>
                   </div>
@@ -68,7 +68,7 @@ export default function Contact() {
 
             {/* Social Grid */}
             <div className="flex flex-col gap-4">
-              <h4 className="text-[14px] uppercase font-bold tracking-wider text-[#ffb829]">
+              <h4 className="text-[14px] uppercase font-bold tracking-wider text-[#4DA8FF]">
                 Social Media
               </h4>
               <div className="flex gap-4">
@@ -76,7 +76,7 @@ export default function Contact() {
                   <a
                     key={idx}
                     href={s.href}
-                    className="w-10 h-10 rounded-full border border-[#222] hover:border-[#8052ff] flex items-center justify-center text-[#9a9a9a] hover:text-[#8052ff] transition-all"
+                    className="w-10 h-10 rounded-full border border-[#e2e8f0] hover:border-[#FF3E8A] flex items-center justify-center text-ash hover:text-[#FF3E8A] transition-all"
                     aria-label={s.name}
                   >
                     <s.icon />
@@ -87,7 +87,7 @@ export default function Contact() {
           </div>
 
           {/* Right Column: Clean Map with 24px border-radius */}
-          <div className="lg:col-span-7 h-[350px] lg:h-auto min-h-[350px] rounded-[24px] overflow-hidden border border-[#222] relative">
+          <div className="lg:col-span-7 h-[350px] lg:h-auto min-h-[350px] rounded-[24px] overflow-hidden border border-[#e2e8f0] relative">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125218.49071536663!2d75.72761614761036!3d11.267389279589715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba65938563d4747%3A0x321557147d0e1e58!2sKozhikode%2C%20Kerala!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin"
               width="100%"
@@ -97,7 +97,7 @@ export default function Contact() {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               title="Kozhikode Map"
-              className="absolute inset-0 grayscale invert opacity-60 hover:opacity-85 hover:grayscale-0 transition-all duration-300"
+              className="absolute inset-0 grayscale opacity-70 hover:opacity-95 hover:grayscale-0 transition-all duration-300"
             />
           </div>
 

@@ -21,11 +21,14 @@ export default function Hero() {
         <div className="lg:col-span-7 flex flex-col items-start text-left">
           
           {/* Status/Badge */}
-          <motion.div {...fadeUp(0)} className="mb-8">
-            <span className="tag-iris">
+          <motion.div {...fadeUp(0)} className="mb-8 flex flex-wrap gap-2 items-center">
+            <span className="tag-iris font-mono text-[13px] font-medium">
               October 21, 2026
             </span>
-            <span className="tag-saffron ml-2">
+            <span className="tag-saffron font-mono text-[13px] font-medium">
+              Kozhikode North
+            </span>
+            <span className="px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-[#FF3E8A] bg-[#FF3E8A]/10 rounded-full">
               +1 &amp; +2 Only
             </span>
           </motion.div>
@@ -33,24 +36,24 @@ export default function Hero() {
           {/* Outsized display header */}
           <motion.h1
             {...fadeUp(0.05)}
-            className="font-display text-white dala-display mb-4"
+            className="font-display text-transparent bg-gradient-to-r from-[#FF3E8A] via-[#8052ff] to-[#4DA8FF] bg-clip-text dala-display mb-4 font-black"
           >
             teenspace
           </motion.h1>
 
           <motion.div {...fadeUp(0.1)} className="flex flex-col gap-1 mb-8">
-            <p className="text-[#9a9a9a] text-[24px] uppercase font-bold tracking-[0.2em] leading-none">
+            <p className="text-[#0f172a] text-[24px] uppercase font-bold tracking-[0.2em] leading-none">
               WISDOM STUDENTS
             </p>
-            <p className="text-[#8052ff] text-[20px] uppercase font-bold tracking-[0.25em] leading-none">
+            <p className="text-[#4DA8FF] text-[20px] uppercase font-bold tracking-[0.25em] leading-none">
               KOZHIKODE NORTH
             </p>
           </motion.div>
 
-          {/* Body description (weight 200 ultra-light) */}
+          {/* Body description (weight 200/300 light) */}
           <motion.p
             {...fadeUp(0.15)}
-            className="text-[#bdbdbd] text-[18px] font-light leading-relaxed max-w-xl mb-10"
+            className="text-[#475569] text-[18px] font-normal leading-relaxed max-w-xl mb-10"
           >
             An exclusive secondary students conference empowering Plus One and Plus Two youth with leadership, knowledge, brotherhood, and moral character.
           </motion.p>
@@ -62,7 +65,7 @@ export default function Hero() {
             </a>
             <a
               href="#highlights"
-              className="btn-ghost font-semibold text-[14px] uppercase tracking-[0.025em] text-[#9a9a9a] hover:text-white"
+              className="btn-ghost font-semibold text-[14px] uppercase tracking-[0.025em]"
             >
               Explore Gallery
             </a>
