@@ -16,7 +16,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="absolute top-0 left-0 right-0 z-50 bg-transparent">
+      <header className="sticky top-0 left-0 right-0 z-[100] bg-white/85 backdrop-blur-md border-b border-slate-200/50 transition-all duration-200">
         <nav className="max-w-[1280px] mx-auto px-6 min-h-[80px] py-2 flex items-center justify-between">
           {/* Logo Lockup */}
           <a href="#home" className="flex items-center justify-center w-[130px] h-[52px] overflow-hidden relative">
@@ -50,7 +50,7 @@ export default function Navbar() {
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setOpen(!open)}
-            className="md:hidden text-[#475569] hover:text-[#0f172a] transition-colors p-1"
+            className="md:hidden text-slate-900 hover:text-black transition-colors p-1 z-50"
             aria-label="Toggle menu"
           >
             {open ? <X size={20} /> : <Menu size={20} />}
