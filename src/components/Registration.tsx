@@ -28,7 +28,7 @@ export default function Registration() {
       place: formData.place === 'Other' && formData.otherPlace ? formData.otherPlace.trim() : formData.place,
       schoolClass: formData.schoolClass === 'Other' && formData.otherClass ? formData.otherClass.trim() : formData.schoolClass,
     }
-    const url = (import.meta as any).env?.VITE_APPS_SCRIPT_URL || 'https://script.google.com/macros/s/YOUR-SCRIPT-ID/exec'
+    const url = (import.meta as any).env?.VITE_APPS_SCRIPT_URL || 'https://script.google.com/macros/s/AKfycbxAs8s_fy9zmWneJZWG5dXoMXo9MLcnvW_5lvZICIcUfVNxQPlivsKJNJmdudT70tv0cA/exec'
     try {
       await fetch(url, {
         method: 'POST',
