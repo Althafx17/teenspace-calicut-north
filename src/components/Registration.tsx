@@ -13,13 +13,19 @@ export default function Registration() {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [errMsg, setErrMsg] = useState('')
 
-  const { register, handleSubmit, formState: { errors }, reset } = useForm<RegistrationFormData>({
+  const { register, handleSubmit, watch, formState: { errors }, reset } = useForm<RegistrationFormData>({
     resolver: zodResolver(registrationSchema) as any,
-    defaultValues: { place: '', schoolClass: '' },
+    defaultValues: { place: '', otherPlace: '', schoolClass: '' },
   })
 
-  const onSubmit = async (data: RegistrationFormData) => {
+  const selectedPlace = watch('place')
+
+  const onSubmit = async (formData: RegistrationFormData) => {
     setStatus('loading')
+    const finalData = {
+      ...formData,
+      place: formData.place === 'Other' && formData.otherPlace ? formData.otherPlace.trim() : formData.place,
+    }
     const url = (import.meta as any).env?.VITE_APPS_SCRIPT_URL || 'https://script.google.com/macros/s/YOUR-SCRIPT-ID/exec'
     try {
       await fetch(url, {
@@ -28,7 +34,7 @@ export default function Registration() {
         headers: {
           'Content-Type': 'text/plain;charset=utf-8',
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(finalData),
       })
       setStatus('success')
       reset()
@@ -141,9 +147,22 @@ export default function Registration() {
                     <option value="Perambra">Perambra</option>
                     <option value="Poonoor">Poonoor</option>
                     <option value="Vatakara">Vatakara</option>
-                    <option value="Other">Other</option>
+                    <option value="Other">Other (Type place)</option>
                   </select>
                   {errors.place && <p className={errorCls}>{errors.place.message}</p>}
+
+                  {selectedPlace === 'Other' && (
+                    <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} className="mt-2.5">
+                      <input
+                        id="otherPlace"
+                        type="text"
+                        placeholder="Type your place / area name"
+                        className={inputCls}
+                        {...register('otherPlace')}
+                      />
+                      {errors.otherPlace && <p className={errorCls}>{errors.otherPlace.message}</p>}
+                    </motion.div>
+                  )}
                 </div>
 
                 {/* Expectations */}
