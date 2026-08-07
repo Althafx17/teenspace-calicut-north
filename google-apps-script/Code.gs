@@ -30,7 +30,6 @@ function doPost(e) {
     var headers = [
       "Timestamp",
       "Full Name",
-      "Age",
       "Class",
       "School",
       "Place",
@@ -57,7 +56,6 @@ function doPost(e) {
     var row = [
       new Date(),
       data.name || "",
-      data.age || "",
       data.schoolClass || "",
       data.institution || "",
       data.place || "",

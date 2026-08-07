@@ -15,16 +15,18 @@ export default function Registration() {
 
   const { register, handleSubmit, watch, formState: { errors }, reset } = useForm<RegistrationFormData>({
     resolver: zodResolver(registrationSchema) as any,
-    defaultValues: { place: '', otherPlace: '', schoolClass: '' },
+    defaultValues: { place: '', otherPlace: '', schoolClass: '', otherClass: '' },
   })
 
   const selectedPlace = watch('place')
+  const selectedClass = watch('schoolClass')
 
   const onSubmit = async (formData: RegistrationFormData) => {
     setStatus('loading')
     const finalData = {
       ...formData,
       place: formData.place === 'Other' && formData.otherPlace ? formData.otherPlace.trim() : formData.place,
+      schoolClass: formData.schoolClass === 'Other' && formData.otherClass ? formData.otherClass.trim() : formData.schoolClass,
     }
     const url = (import.meta as any).env?.VITE_APPS_SCRIPT_URL || 'https://script.google.com/macros/s/YOUR-SCRIPT-ID/exec'
     try {
@@ -103,13 +105,6 @@ export default function Registration() {
                   {errors.name && <p className={errorCls}>{errors.name.message}</p>}
                 </div>
 
-                {/* Age */}
-                <div>
-                  <label htmlFor="age" className={labelCls}>age *</label>
-                  <input id="age" type="number" placeholder="15–18" className={inputCls} {...register('age')} />
-                  {errors.age && <p className={errorCls}>{errors.age.message}</p>}
-                </div>
-
                 {/* Class */}
                 <div>
                   <label htmlFor="schoolClass" className={labelCls}>class *</label>
@@ -117,8 +112,22 @@ export default function Registration() {
                     <option value="">Select class</option>
                     <option value="Plus One">Plus One (+1)</option>
                     <option value="Plus Two">Plus Two (+2)</option>
+                    <option value="Other">Other (Type class)</option>
                   </select>
                   {errors.schoolClass && <p className={errorCls}>{errors.schoolClass.message}</p>}
+
+                  {selectedClass === 'Other' && (
+                    <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} className="mt-2.5">
+                      <input
+                        id="otherClass"
+                        type="text"
+                        placeholder="Type your class / course"
+                        className={inputCls}
+                        {...register('otherClass')}
+                      />
+                      {errors.otherClass && <p className={errorCls}>{errors.otherClass.message}</p>}
+                    </motion.div>
+                  )}
                 </div>
 
                 {/* School */}
