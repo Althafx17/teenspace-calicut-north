@@ -32,7 +32,7 @@ function doPost(e) {
       "Full Name",
       "Age",
       "Class",
-      "School / College",
+      "School",
       "Place",
       "Phone",
       "Expectations"

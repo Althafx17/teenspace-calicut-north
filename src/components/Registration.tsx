@@ -115,10 +115,10 @@ export default function Registration() {
                   {errors.schoolClass && <p className={errorCls}>{errors.schoolClass.message}</p>}
                 </div>
 
-                {/* Institution */}
+                {/* School */}
                 <div>
-                  <label htmlFor="institution" className={labelCls}>school / college *</label>
-                  <input id="institution" type="text" placeholder="Institution name" className={inputCls} {...register('institution')} />
+                  <label htmlFor="institution" className={labelCls}>school *</label>
+                  <input id="institution" type="text" placeholder="School name" className={inputCls} {...register('institution')} />
                   {errors.institution && <p className={errorCls}>{errors.institution.message}</p>}
                 </div>
 

@@ -11,7 +11,7 @@ export const registrationSchema = z.object({
   phone: z
     .string()
     .regex(/^[6-9]\d{9}$/, "Phone number must be a valid 10-digit Indian mobile number"),
-  institution: z.string().min(2, "Institution/College name is required"),
+  institution: z.string().min(2, "School name is required"),
   schoolClass: z.string().min(1, "School Class / Course details are required"),
   expectations: z.string().optional(),
 });
