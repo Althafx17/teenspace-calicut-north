@@ -15,7 +15,7 @@ export default function Registration() {
 
   const { register, handleSubmit, formState: { errors }, reset } = useForm<RegistrationFormData>({
     resolver: zodResolver(registrationSchema) as any,
-    defaultValues: { district: 'Kozhikode', area: '', schoolClass: '' },
+    defaultValues: { place: '', schoolClass: '' },
   })
 
   const onSubmit = async (data: RegistrationFormData) => {
@@ -79,7 +79,7 @@ export default function Registration() {
               <motion.div key="ok" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="py-12 flex flex-col items-center gap-4 text-center">
                 <CheckCircle2 size={36} className="pulse-text" />
                 <h3 className="text-bone text-[20px] font-normal tracking-tight">Registration submitted.</h3>
-                <p className="text-ash text-[14px] max-w-sm">We'll contact you via phone or email with the next steps.</p>
+                <p className="text-ash text-[14px] max-w-sm">We'll contact you via phone with the next steps.</p>
                 <button onClick={() => setStatus('idle')} className="btn-ghost mt-4 text-[13px]">Register another student</button>
               </motion.div>
             ) : (
@@ -129,42 +129,27 @@ export default function Registration() {
                   {errors.phone && <p className={errorCls}>{errors.phone.message}</p>}
                 </div>
 
-                {/* Parent Phone */}
+                {/* Place */}
                 <div>
-                  <label htmlFor="parentPhone" className={labelCls}>parent_phone *</label>
-                  <input id="parentPhone" type="tel" placeholder="Guardian's number" className={inputCls} {...register('parentPhone')} />
-                  {errors.parentPhone && <p className={errorCls}>{errors.parentPhone.message}</p>}
-                </div>
-
-                {/* Email */}
-                <div>
-                  <label htmlFor="email" className={labelCls}>email *</label>
-                  <input id="email" type="email" placeholder="you@example.com" className={inputCls} {...register('email')} />
-                  {errors.email && <p className={errorCls}>{errors.email.message}</p>}
-                </div>
-
-                {/* Area */}
-                <div>
-                  <label htmlFor="area" className={labelCls}>area / place *</label>
-                  <input id="area" type="text" placeholder="Local area, Kozhikode North" className={inputCls} {...register('area')} />
-                  {errors.area && <p className={errorCls}>{errors.area.message}</p>}
+                  <label htmlFor="place" className={labelCls}>place / area *</label>
+                  <select id="place" className={inputCls} {...register('place')}>
+                    <option value="">Select area</option>
+                    <option value="Balussery">Balussery</option>
+                    <option value="Koyilandy">Koyilandy</option>
+                    <option value="Nadapuram">Nadapuram</option>
+                    <option value="Payyoli">Payyoli</option>
+                    <option value="Perambra">Perambra</option>
+                    <option value="Poonoor">Poonoor</option>
+                    <option value="Vatakara">Vatakara</option>
+                    <option value="Other">Other</option>
+                  </select>
+                  {errors.place && <p className={errorCls}>{errors.place.message}</p>}
                 </div>
 
                 {/* Expectations */}
                 <div className="md:col-span-2">
                   <label htmlFor="expectations" className={labelCls}>expectations <span className="text-iron">(optional)</span></label>
                   <textarea id="expectations" rows={2} placeholder="What do you hope to gain?" className={inputCls} {...register('expectations')} />
-                </div>
-
-                {/* Terms */}
-                <div className="md:col-span-2 flex flex-col gap-2">
-                  <label className="flex items-start gap-3 cursor-pointer">
-                    <input id="agreeTerms" type="checkbox" className="mt-0.5 w-3.5 h-3.5 rounded-[3px] border border-graphite bg-void accent-[#FF3E8A]" {...register('agreeTerms')} />
-                    <span className="text-[13px] font-mono text-ash leading-relaxed">
-                      I agree to abide by the conference code of conduct and follow all instructions given by Wisdom Students Kozhikode North.
-                    </span>
-                  </label>
-                  {errors.agreeTerms && <p className={`${errorCls} pl-6`}>{errors.agreeTerms.message}</p>}
                 </div>
 
                 {/* Submit */}
