@@ -1,33 +1,29 @@
+import { lazy, Suspense } from 'react'
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
-import About from '@/components/About'
-import Features from '@/components/Features'
-import Highlights from '@/components/Highlights'
-import Speakers from '@/components/Speakers'
-import Timeline from '@/components/Timeline'
-import Countdown from '@/components/Countdown'
-import Registration from '@/components/Registration'
-import FAQ from '@/components/FAQ'
-import Contact from '@/components/Contact'
-import Footer from '@/components/Footer'
+
+const About        = lazy(() => import('@/components/About'))
+const Highlights   = lazy(() => import('@/components/Highlights'))
+const Registration = lazy(() => import('@/components/Registration'))
+const Contact      = lazy(() => import('@/components/Contact'))
+const Footer       = lazy(() => import('@/components/Footer'))
+
+function SectionFallback() {
+  return <div className="w-full py-24 border-t border-[#e5e7eb]" aria-hidden="true" />
+}
 
 function App() {
   return (
-    <div className="flex flex-col min-h-screen bg-void">
+    <div className="flex flex-col min-h-screen bg-white">
       <Navbar />
       <main className="flex-1">
         <Hero />
-        <About />
-        <Features />
-        <Highlights />
-        <Speakers />
-        <Timeline />
-        <Countdown />
-        <Registration />
-        <FAQ />
-        <Contact />
+        <Suspense fallback={<SectionFallback />}><About /></Suspense>
+        <Suspense fallback={<SectionFallback />}><Highlights /></Suspense>
+        <Suspense fallback={<SectionFallback />}><Registration /></Suspense>
+        <Suspense fallback={<SectionFallback />}><Contact /></Suspense>
       </main>
-      <Footer />
+      <Suspense fallback={null}><Footer /></Suspense>
     </div>
   )
 }

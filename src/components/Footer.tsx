@@ -1,24 +1,32 @@
 export default function Footer() {
   return (
-    <footer className="bg-void border-t border-[#e2e8f0] py-12">
-      <div className="max-w-[1280px] mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
-        
-        {/* Brand signature */}
-        <div className="flex items-center justify-center w-[100px] h-[40px] overflow-hidden relative">
-          <img 
-            src="/TEENSPACE-01-2.png" 
-            alt="Teenspace Logo" 
-            className="h-10 w-auto object-cover scale-[1.9] origin-center max-w-none" 
+    <footer className="bg-white border-t border-[#e5e7eb] py-10">
+      <div className="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
+
+        {/* Logo */}
+        <div className="flex items-center justify-center w-[100px] h-[40px] overflow-hidden">
+          <img
+            src="/TEENSPACE-01-2.png"
+            alt="Teenspace Logo"
+            width={100}
+            height={40}
+            decoding="async"
+            className="h-10 w-auto object-contain scale-[1.8] origin-center"
           />
         </div>
 
-        {/* Minimal Link list */}
-        <div className="flex items-center gap-6 text-[14px]">
-          <a href="#about" className="text-[#475569] hover:text-[#0f172a] transition-colors">About</a>
-          <a href="#highlights" className="text-[#475569] hover:text-[#0f172a] transition-colors">Gallery</a>
-          <a href="#register" className="text-[#475569] hover:text-[#0f172a] transition-colors">Register</a>
+        {/* Links */}
+        <div className="flex items-center gap-6 text-[13px] font-semibold">
+          <a href="#about"    className="text-[#64748b] hover:text-[#dc2626] transition-colors">About</a>
+          <a href="#gallery"  className="text-[#64748b] hover:text-[#dc2626] transition-colors">Gallery</a>
+          <a href="#register" className="text-[#64748b] hover:text-[#dc2626] transition-colors">Register</a>
+          <a href="#contact"  className="text-[#64748b] hover:text-[#dc2626] transition-colors">Contact</a>
         </div>
 
+        {/* Copyright */}
+        <p className="text-[#9ca3af] text-[12px]">
+          © 2026 Wisdom Students · Kozhikode North
+        </p>
       </div>
     </footer>
   )

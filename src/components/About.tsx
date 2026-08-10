@@ -1,85 +1,45 @@
-import { motion } from 'framer-motion'
-import { Compass, Eye, ShieldCheck } from 'lucide-react'
+import { ShieldCheck, Compass } from 'lucide-react'
 
 const blocks = [
   {
-    icon: Compass,
-    title: 'Mission',
-    ml: 'ദൗത്യം',
-    body: 'Empowering Higher Secondary students through knowledge acquisition, character transformation, and social responsibility.',
-  },
-  {
-    icon: Eye,
-    title: 'Vision',
-    ml: 'ദർശനം',
-    body: 'A student generation built on moral integrity, leadership potential, and mutual brotherhood.',
-  },
-  {
     icon: ShieldCheck,
-    title: 'Objectives',
-    ml: 'ലക്ഷ്യങ്ങൾ',
-    body: 'Providing academic direction, fostering ethical standards, and conducting student development programs.',
+    title: 'Moral & Islamic Focus',
+    body: 'Teenspace integrates moral guidelines with a strong Islamic value system to foster character, integrity, and self-discipline. We help students develop ethical anchors, build a strong moral identity, and psychological resilience to navigate contemporary peer pressures, digital habits, and modern lifestyle dilemmas.',
+  },
+  {
+    icon: Compass,
+    title: 'Career & Personality',
+    body: 'Our high-energy training segments empower teens to understand their potential, improve societal behavior, and design successful academic trajectories. Guided by experts, students explore career opportunities, learn emotional intelligence, and discover how to become responsible, value-driven citizens.',
   },
 ]
 
 export default function About() {
   return (
-    <section id="about" className="bg-void py-32 border-t border-[#e2e8f0]">
-      <div className="max-w-[1280px] mx-auto px-6">
-        
-        {/* Asymmetric Two-Column intro */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start mb-24">
-          
-          {/* Left: Headline block (occupied left half) */}
-          <div className="lg:col-span-6">
-            <span className="tag-saffron mb-4">who we are</span>
-            <motion.h2
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="font-display text-bone dala-heading-lg mt-4"
-            >
-              Enlightening<br />young minds.
-            </motion.h2>
-          </div>
+    <section id="about" className="bg-white border-t border-[#e5e7eb] py-20">
+      <div className="max-w-5xl mx-auto px-6">
 
-          {/* Right: Body copy + details (occupied right half) */}
-          <div className="lg:col-span-6 lg:pt-14 flex flex-col gap-6">
-            <p className="text-ash text-[18px] font-normal leading-relaxed">
-              Kozhikode North Wisdom Students represents the Higher Secondary student wing — working actively across schools, colleges, and local areas to construct a morally grounded student community.
-            </p>
-            <p className="text-ash text-[16px] font-normal leading-relaxed">
-              Through Teenspace 2026, we aim to bridge the gap between academic education and moral values, providing a healthy environment for intellectual and ethical development.
-            </p>
-          </div>
+        {/* Header */}
+        <div className="mb-12">
+          <p className="section-label mb-3">Overview</p>
+          <h2 className="heading-lg mb-3">About Teenspace</h2>
+          <p className="text-[#64748b] text-base max-w-2xl">
+            A brief overview of the programme, its objectives, and what we aim to deliver.
+          </p>
         </div>
 
-        {/* Three Columns - Floating layout (no cards, no borders, just whitespace) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 pt-12 border-t border-[#e2e8f0]">
+        {/* Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {blocks.map((b, i) => (
-            <motion.div
-              key={b.title}
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="flex flex-col items-start gap-4"
-            >
-              <div className="flex items-center gap-3">
-                <span className="text-[#FF3E8A]">
-                  <b.icon size={18} />
-                </span>
-                <h3 className="text-bone font-medium text-[20px] uppercase tracking-wide">
-                  {b.title}
-                </h3>
-                <span className="text-[12px] font-mono text-[#4DA8FF]">{b.ml}</span>
+            <div key={i} className="card-flat">
+              <div className="w-10 h-10 rounded-lg bg-red-50 flex items-center justify-center text-[#dc2626] mb-5">
+                <b.icon size={20} />
               </div>
-              <p className="text-ash text-[15px] font-normal leading-relaxed">
-                {b.body}
-              </p>
-            </motion.div>
+              <h3 className="heading-sm mb-3">{b.title}</h3>
+              <p className="text-[#64748b] text-[15px] leading-relaxed">{b.body}</p>
+            </div>
           ))}
         </div>
+
       </div>
     </section>
   )

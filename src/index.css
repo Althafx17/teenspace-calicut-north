@@ -2,156 +2,217 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ─── Dala Design System Tokens (Light Theme Remap) ────────────────── */
+/* ─── Brand Tokens — extracted from Teenspace logo ─────────────────── */
 :root {
-  --color-void:          #ffffff;
-  --color-white:         #0f172a;
-  --color-bone:          #1e293b;
-  --color-ash:           #475569;
-  --color-silver:        #64748b;
-  --color-iris:          #FF3E8A; /* Pink accent */
-  --color-saffron:       #4DA8FF; /* Blue accent */
-  --color-verdant:       #15846e;
+  --navy:   #0f294a;           /* Dark heading text              */
+  --pink:   #e91e8c;           /* Logo left bubble — hot pink    */
+  --cyan:   #29b6f6;           /* Logo right bubble — sky cyan   */
+  --gray:   #64748b;           /* Body text                      */
+  --border: #e5e7eb;           /* Neutral borders                */
+  --bg:     #ffffff;
 
-  --radius-nav:    24px;
-  --radius-tag:    9999px;
-  --radius-card:   24px;
-  --radius-button: 24px;
+  /* Gradient shorthand */
+  --grad: linear-gradient(135deg, var(--pink) 0%, var(--cyan) 100%);
 }
 
 /* ─── Reset & Base ────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; }
 
-html {
-  scroll-behavior: smooth;
-  background-color: #ffffff;
-}
+html { scroll-behavior: smooth; background: #fff; }
 
 body {
-  background-color: #ffffff;
-  color: #0f172a;
+  background: #fff;
+  color: #0f294a;
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  font-size: 18px;
-  font-weight: 300; /* Adjusted light font weight for best readability on white */
-  line-height: 1.55;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
 
-/* ─── Dala Typography ─────────────────────────────────────────────── */
-.font-display {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  font-weight: 400; /* Weight 400 for headers */
-}
-
-/* Outsized display text with aggressive negative tracking */
-.dala-display {
-  font-size: clamp(64px, 10vw, 113px);
-  line-height: 0.95;
-  letter-spacing: -4.52px;
-}
-
-.dala-heading-lg {
-  font-size: clamp(48px, 7vw, 78px);
+/* ─── Typography ──────────────────────────────────────────────────── */
+.display-xl {
+  font-size: clamp(40px, 6vw, 72px);
+  font-weight: 800;
   line-height: 1.05;
-  letter-spacing: -3.12px;
+  letter-spacing: -2px;
+  color: #0f294a;
 }
 
-.dala-heading-sm {
-  font-size: clamp(32px, 5vw, 42px);
+.heading-lg {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 700;
   line-height: 1.1;
-  letter-spacing: -1.68px;
+  letter-spacing: -1px;
+  color: #0f294a;
+}
+
+.heading-sm {
+  font-size: clamp(20px, 3vw, 28px);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #0f294a;
+}
+
+/* Section label — uses cyan from logo */
+.section-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cyan);
 }
 
 /* ─── Buttons ──────────────────────────────────────────────────────── */
-.btn-iris {
-  background-color: #FF3E8A;
-  color: #ffffff;
-  font-weight: 600;
+.btn-primary {
+  background: var(--grad);
+  color: #fff;
   font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  letter-spacing: 0.025em;
-  padding: 14px 28px;
-  border-radius: var(--radius-button);
+  padding: 12px 28px;
+  border-radius: 8px;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  transition: transform 150ms ease-out, background-color 150ms ease-out;
+  border: none;
   cursor: pointer;
+  transition: filter 160ms ease, transform 160ms ease;
 }
-.btn-iris:hover {
-  background-color: #e02874;
-  transform: translateY(-1px);
+.btn-primary:hover  { filter: brightness(1.08); transform: translateY(-1px); }
+.btn-primary:active { transform: none; filter: brightness(0.96); }
+
+.btn-secondary {
+  background: transparent;
+  color: #0f294a;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 12px 28px;
+  border-radius: 8px;
+  border: 2px solid #0f294a;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: background 150ms, color 150ms, border-color 150ms;
 }
-.btn-iris:active {
-  transform: translateY(0);
-}
+.btn-secondary:hover { background: #0f294a; color: #fff; }
 
 .btn-ghost {
   background: transparent;
   border: none;
-  color: #475569;
-  font-size: 14px;
+  color: #64748b;
+  font-size: 13px;
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.025em;
-  padding: 8px 16px;
-  transition: color 150ms ease-out;
   cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
+  padding: 6px 12px;
+  transition: color 150ms;
 }
-.btn-ghost:hover {
-  color: #0f172a;
+.btn-ghost:hover { color: var(--cyan); }
+
+/* ─── Cards ────────────────────────────────────────────────────────── */
+.card-flat {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 28px;
+  transition: border-color 150ms;
+}
+.card-flat:hover { border-color: var(--cyan); }
+
+/* ─── Form Elements ────────────────────────────────────────────────── */
+.input-field {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #0f294a;
+  background: #fff;
+  transition: border-color 150ms;
+  outline: none;
+}
+.input-field::placeholder { color: #9ca3af; }
+.input-field:focus { border-color: var(--cyan); }
+
+.label-field {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #0f294a;
+  margin-bottom: 6px;
 }
 
-/* ─── Tags ────────────────────────────────────────────────────────── */
-.tag-iris {
-  border: 1px solid rgba(255, 62, 138, 0.3);
-  color: #FF3E8A;
-  background: rgba(255, 62, 138, 0.05);
+.error-field {
   font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 4px 12px;
-  border-radius: var(--radius-tag);
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
+  color: #e91e8c;    /* use brand pink for errors */
+  font-weight: 500;
+  margin-top: 4px;
 }
 
-.tag-saffron {
-  border: 1px solid rgba(77, 168, 255, 0.3);
-  color: #4DA8FF;
-  background: rgba(77, 168, 255, 0.05);
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 4px 12px;
-  border-radius: var(--radius-tag);
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
+/* ─── Gallery hover animation ──────────────────────────────────────── */
+.gallery-item {
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+.gallery-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.06);
+}
+
+.gallery-item .gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(15,41,74,0.80) 0%, transparent 55%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  display: flex;
+  align-items: flex-end;
+  padding: 14px;
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+/* ─── Countdown ────────────────────────────────────────────────────── */
+.countdown-block {
+  text-align: center;
+  padding: 20px 12px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 10px;
+  background: #fff;
 }
 
 /* ─── Scrollbar ────────────────────────────────────────────────────── */
-::-webkit-scrollbar {
-  width: 4px;
-}
-::-webkit-scrollbar-track {
-  background: #ffffff;
-}
-::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 2px;
-}
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #fff; }
+::-webkit-scrollbar-thumb { background: #e5e7eb; border-radius: 2px; }
 
-/* ─── Selection ────────────────────────────────────────────────────── */
-::selection {
-  background: rgba(255, 62, 138, 0.15);
-  color: #0f172a;
+/* ─── Selection — uses brand pink ─────────────────────────────────── */
+::selection { background: rgba(233,30,140,0.12); color: #0f294a; }
+
+/* ─── Fade-up animation ────────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
+.fade-up { animation: fadeUp 0.5s ease forwards; }
