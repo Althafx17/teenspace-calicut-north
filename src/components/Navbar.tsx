@@ -44,18 +44,18 @@ export default function Navbar() {
 
       {/* Main Navbar */}
       <nav className="bg-white border-b border-[#e5e7eb]">
-        <div className="max-w-5xl mx-auto px-6 h-20 flex items-center justify-between">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-2">
 
-          {/* Bigger Teenspace Logo */}
-          <a href="#home" className="flex items-center justify-start w-[160px] h-[58px] overflow-hidden">
+          {/* Clean Uncropped Logo */}
+          <a href="#home" className="flex items-center justify-start h-[52px] shrink-0">
             <img
               src="/TEENSPACE-01-2.png"
               alt="Teenspace Logo"
-              width={160}
-              height={58}
+              width={180}
+              height={52}
               fetchPriority="high"
               decoding="sync"
-              className="h-[58px] w-auto object-contain scale-[2.25] origin-left"
+              className="h-[48px] sm:h-[54px] w-auto object-contain max-w-[180px] sm:max-w-[220px]"
             />
           </a>
 
@@ -72,29 +72,35 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* CTA */}
-          <a href="#register" className="hidden md:inline-flex btn-primary text-[13px] !py-3 !px-6">
-            Register Now
-          </a>
+          {/* Action Buttons (Register + Mobile Menu) */}
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+            <a
+              href="#register"
+              className="btn-primary register-button inline-flex text-[11px] sm:text-[13px] !py-2 !px-3 sm:!py-2.5 sm:!px-5 rounded-lg"
+            >
+              Register Now
+            </a>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setOpen(!open)}
-            className="md:hidden flex items-center gap-1.5 px-3.5 py-2 rounded-lg border border-[#e5e7eb] bg-slate-50 text-[#0f294a] text-[12px] font-bold uppercase tracking-wider hover:bg-slate-100 hover:border-[#29b6f6] transition-all"
-            aria-label="Toggle navigation menu"
-          >
-            {open ? (
-              <>
-                <X size={18} />
-                <span>Close</span>
-              </>
-            ) : (
-              <>
-                <Menu size={18} />
-                <span>Menu</span>
-              </>
-            )}
-          </button>
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setOpen(!open)}
+              className="md:hidden flex items-center gap-1 px-2.5 py-2 rounded-lg border border-[#e5e7eb] bg-slate-50 text-[#0f294a] text-[11px] font-bold uppercase tracking-wider hover:bg-slate-100 hover:border-[#29b6f6] transition-all"
+              aria-label="Toggle navigation menu"
+            >
+              {open ? (
+                <>
+                  <X size={16} />
+                  <span>Close</span>
+                </>
+              ) : (
+                <>
+                  <Menu size={16} />
+                  <span>Menu</span>
+                </>
+              )}
+            </button>
+          </div>
+
         </div>
       </nav>
 
@@ -106,7 +112,7 @@ export default function Navbar() {
             <WisdomStudentsTag theme="light" />
             <button
               onClick={() => setOpen(false)}
-              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg border border-[#e5e7eb] bg-slate-50 text-[#0f294a] text-[12px] font-bold uppercase tracking-wider"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#e5e7eb] bg-slate-50 text-[#0f294a] text-[12px] font-bold uppercase tracking-wider"
             >
               <X size={18} />
               <span>Close</span>
@@ -118,9 +124,9 @@ export default function Navbar() {
             <img
               src="/TEENSPACE-01-2.png"
               alt="Teenspace Logo"
-              width={150}
+              width={180}
               height={54}
-              className="h-[54px] w-auto object-contain scale-[2.2] origin-center mb-2"
+              className="h-[54px] w-auto object-contain max-w-[200px] mb-2"
             />
             {links.map(l => (
               <a
