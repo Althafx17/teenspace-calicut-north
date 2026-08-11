@@ -1,18 +1,17 @@
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
-import { socials } from './Contact'
 
 export function WisdomStudentsTag({ theme = 'dark' }: { theme?: 'dark' | 'light' }) {
   const isDark = theme === 'dark'
   return (
-    <div className="flex items-center gap-2 text-[12px] leading-none select-none">
-      <span className={`font-serif font-black tracking-widest text-[13px] ${isDark ? 'text-white' : 'text-[#0f294a]'}`}>
+    <div className="flex items-center gap-2 text-[13px] sm:text-[14px] leading-none select-none">
+      <span className={`font-serif font-black tracking-widest text-[14px] sm:text-[15px] ${isDark ? 'text-white' : 'text-[#0f294a]'}`}>
         WISDOM
       </span>
-      <span className={`font-black text-[13px] flex items-center tracking-tight ${isDark ? 'text-white' : 'text-[#0f294a]'}`}>
-        st<span className="inline-flex items-center justify-center w-3.5 h-3.5 rounded-full bg-[#dc2626] text-white text-[9px] font-black mx-[0.5px] leading-none">u</span>dents
+      <span className={`font-black text-[14px] sm:text-[15px] flex items-center tracking-tight ${isDark ? 'text-white' : 'text-[#0f294a]'}`}>
+        st<span className="inline-flex items-center justify-center w-4 h-4 rounded-full bg-[#dc2626] text-white text-[10px] font-black mx-[0.5px] leading-none">u</span>dents
       </span>
-      <span className={`font-bold text-[13px] tracking-tight ml-1 ${isDark ? 'text-[#29b6f6]' : 'text-[#0f294a]'}`}>
+      <span className={`font-extrabold text-[13px] sm:text-[14px] tracking-tight ml-1 ${isDark ? 'text-[#29b6f6]' : 'text-[#0f294a]'}`}>
         Kozhikode North
       </span>
     </div>
@@ -31,11 +30,11 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50">
       {/* Mini Top Bar */}
-      <div className="bg-[#0f294a] text-white py-2 px-6 border-b border-slate-800/60">
+      <div className="bg-[#0f294a] text-white py-2.5 px-6 border-b border-slate-800/60">
         <div className="max-w-5xl mx-auto flex items-center justify-between">
           <WisdomStudentsTag theme="dark" />
           
-          <div className="hidden sm:flex items-center gap-4 text-slate-300 text-[11px] font-semibold">
+          <div className="hidden sm:flex items-center gap-4 text-slate-300 text-[12px] font-semibold">
             <span>Higher Secondary Conference</span>
             <span className="w-1 h-1 rounded-full bg-slate-500" />
             <span>Oct 21, 2026</span>
@@ -45,18 +44,18 @@ export default function Navbar() {
 
       {/* Main Navbar */}
       <nav className="bg-white border-b border-[#e5e7eb]">
-        <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+        <div className="max-w-5xl mx-auto px-6 h-20 flex items-center justify-between">
 
-          {/* Restored Teenspace Logo */}
-          <a href="#home" className="flex items-center justify-start w-[120px] h-[44px] overflow-hidden">
+          {/* Bigger Teenspace Logo */}
+          <a href="#home" className="flex items-center justify-start w-[160px] h-[58px] overflow-hidden">
             <img
               src="/TEENSPACE-01-2.png"
               alt="Teenspace Logo"
-              width={120}
-              height={44}
+              width={160}
+              height={58}
               fetchPriority="high"
               decoding="sync"
-              className="h-[44px] w-auto object-contain scale-[1.8] origin-left"
+              className="h-[58px] w-auto object-contain scale-[2.25] origin-left"
             />
           </a>
 
@@ -66,7 +65,7 @@ export default function Navbar() {
               <a
                 key={l.label}
                 href={l.href}
-                className="text-[13px] font-semibold uppercase tracking-wider text-[#0f294a] hover:text-[#29b6f6] transition-colors"
+                className="text-[14px] font-bold uppercase tracking-wider text-[#0f294a] hover:text-[#29b6f6] transition-colors"
               >
                 {l.label}
               </a>
@@ -74,8 +73,8 @@ export default function Navbar() {
           </div>
 
           {/* CTA */}
-          <a href="#register" className="hidden md:inline-flex btn-primary text-[13px] !py-2.5 !px-5">
-            Register
+          <a href="#register" className="hidden md:inline-flex btn-primary text-[13px] !py-3 !px-6">
+            Register Now
           </a>
 
           {/* Mobile Toggle */}
@@ -84,7 +83,7 @@ export default function Navbar() {
             className="md:hidden text-[#0f294a] p-1"
             aria-label="Toggle menu"
           >
-            {open ? <X size={22} /> : <Menu size={22} />}
+            {open ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </nav>
@@ -92,14 +91,14 @@ export default function Navbar() {
       {/* Mobile Drawer */}
       {open && (
         <div className="fixed inset-0 z-40 bg-white flex flex-col items-center justify-center gap-8 md:hidden">
-          <div className="flex flex-col items-center gap-3">
+          <div className="flex flex-col items-center gap-4">
             <WisdomStudentsTag theme="light" />
             <img
               src="/TEENSPACE-01-2.png"
               alt="Teenspace Logo"
-              width={120}
-              height={44}
-              className="h-[44px] w-auto object-contain scale-[1.8] origin-center mt-2"
+              width={150}
+              height={54}
+              className="h-[54px] w-auto object-contain scale-[2.2] origin-center mt-2"
             />
           </div>
 
@@ -119,7 +118,7 @@ export default function Navbar() {
           <a
             href="#register"
             onClick={() => setOpen(false)}
-            className="btn-primary mt-2 w-52 justify-center"
+            className="btn-primary mt-2 w-56 justify-center py-3.5 text-sm"
           >
             Register Now
           </a>
