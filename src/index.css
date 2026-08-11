@@ -12,7 +12,7 @@
   --bg:     #ffffff;
 
   /* Gradient shorthand */
-  --grad: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  --grad: linear-gradient(135deg, #29b6f6 0%, #0284c7 100%);
 }
 
 /* ─── Reset & Base ────────────────────────────────────────────────── */
@@ -66,7 +66,7 @@ body {
 
 /* ─── Buttons ──────────────────────────────────────────────────────── */
 .btn-primary {
-  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  background: linear-gradient(135deg, #29b6f6 0%, #0284c7 100%);
   color: #fff;
   font-size: 14px;
   font-weight: 700;
@@ -79,10 +79,10 @@ body {
   gap: 8px;
   border: none;
   cursor: pointer;
-  box-shadow: 0 10px 25px -5px rgba(220, 38, 38, 0.35);
+  box-shadow: 0 10px 25px -5px rgba(41, 182, 246, 0.4);
   transition: filter 160ms ease, transform 160ms ease, box-shadow 160ms ease;
 }
-.btn-primary:hover  { filter: brightness(1.08); transform: translateY(-1px); box-shadow: 0 14px 28px -4px rgba(220, 38, 38, 0.45); }
+.btn-primary:hover  { filter: brightness(1.08); transform: translateY(-1px); box-shadow: 0 14px 28px -4px rgba(41, 182, 246, 0.5); }
 .btn-primary:active { transform: none; filter: brightness(0.96); }
 
 .btn-secondary {
@@ -194,7 +194,7 @@ body {
   opacity: 1;
 }
 
-/* ─── Wave Animation for Hero ─────────────────────────────────────── */
+/* ─── Wave Animation & Edge Blending ───────────────────────────────── */
 @keyframes waveMotion {
   0%   { transform: translateY(0px) scale(1) rotate(0deg); }
   33%  { transform: translateY(-7px) scale(1.015) rotate(0.6deg); }
@@ -215,13 +215,18 @@ body {
   animation: waveSwell 4s ease-in-out infinite;
 }
 
+.blend-ocean-edges {
+  mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, black 70%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, black 70%, transparent 100%);
+}
+
 /* ─── Scrollbar ────────────────────────────────────────────────────── */
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: #fff; }
 ::-webkit-scrollbar-thumb { background: #e5e7eb; border-radius: 2px; }
 
 /* ─── Selection ────────────────────────────────────────────────────── */
-::selection { background: rgba(233,30,140,0.12); color: #0f294a; }
+::selection { background: rgba(41,182,246,0.15); color: #0f294a; }
 
 /* ─── Fade-up animation ────────────────────────────────────────────── */
 @keyframes fadeUp {
