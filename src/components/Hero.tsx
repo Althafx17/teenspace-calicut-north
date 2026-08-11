@@ -33,18 +33,18 @@ export default function Hero() {
         </div>
 
         {/* Main Headline */}
-        <h1 className="text-[48px] sm:text-[66px] lg:text-[80px] font-black tracking-tight text-[#0f294a] leading-none mb-1">
-          Teenspace <span className="text-[#ec4899]">2026</span>
+        <h1 className="text-[48px] sm:text-[66px] lg:text-[80px] font-black tracking-tight text-[#0f294a] leading-none mb-2">
+          Teenspace <span className="text-brand-pink">2026</span>
         </h1>
 
         {/* Sub-headline */}
-        <p className="text-[13px] sm:text-[16px] font-extrabold tracking-[0.2em] text-[#0f294a] uppercase mb-8">
+        <p className="sub-heading-payyoli">
           WISDOM STUDENTS — KOZHIKODE NORTH
         </p>
 
-        {/* Consolidated Date Badge Element (Blue to Pink Theme) */}
+        {/* Consolidated Date Badge Element (Blue to Pink Brand Theme) */}
         <div className="flex items-center gap-3 mb-8">
-          <div className="inline-flex items-center gap-3 px-6 py-3.5 rounded-2xl bg-gradient-to-r from-[#29b6f6] to-[#ec4899] text-white font-black text-2xl sm:text-3xl shadow-lg shadow-pink-500/25 tracking-tight transform hover:scale-105 transition-transform min-w-[140px]">
+          <div className="inline-flex items-center gap-3 px-6 py-3.5 rounded-2xl theme-gradient text-white font-black text-2xl sm:text-3xl shadow-lg shadow-pink-500/25 tracking-tight transform hover:scale-105 transition-transform min-w-[140px]">
             <span>OCTOBER 21</span>
             <span className="w-1.5 h-1.5 rounded-full bg-white/70" />
             <span>2026</span>
@@ -76,7 +76,7 @@ export default function Hero() {
           UNTIL TEENSPACE CONFERENCE — PAYYOLI, KOZHIKODE NORTH
         </p>
 
-        {/* Pill Register Button (Gradient Blue to Pink Theme) */}
+        {/* Pill Register Button (Theme Gradient Blue to Pink) */}
         <div>
           <a
             href="#register"
