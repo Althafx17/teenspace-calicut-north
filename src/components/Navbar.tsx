@@ -77,32 +77,51 @@ export default function Navbar() {
             Register Now
           </a>
 
-          {/* Mobile Toggle */}
+          {/* Mobile Menu Button */}
           <button
             onClick={() => setOpen(!open)}
-            className="md:hidden text-[#0f294a] p-1"
-            aria-label="Toggle menu"
+            className="md:hidden flex items-center gap-1.5 px-3.5 py-2 rounded-lg border border-[#e5e7eb] bg-slate-50 text-[#0f294a] text-[12px] font-bold uppercase tracking-wider hover:bg-slate-100 hover:border-[#29b6f6] transition-all"
+            aria-label="Toggle navigation menu"
           >
-            {open ? <X size={24} /> : <Menu size={24} />}
+            {open ? (
+              <>
+                <X size={18} />
+                <span>Close</span>
+              </>
+            ) : (
+              <>
+                <Menu size={18} />
+                <span>Menu</span>
+              </>
+            )}
           </button>
         </div>
       </nav>
 
       {/* Mobile Drawer */}
       {open && (
-        <div className="fixed inset-0 z-40 bg-white flex flex-col items-center justify-center gap-8 md:hidden">
-          <div className="flex flex-col items-center gap-4">
+        <div className="fixed inset-0 z-50 bg-white flex flex-col justify-between p-6 md:hidden">
+          {/* Drawer Top Bar */}
+          <div className="flex items-center justify-between border-b border-[#e5e7eb] pb-4">
             <WisdomStudentsTag theme="light" />
+            <button
+              onClick={() => setOpen(false)}
+              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg border border-[#e5e7eb] bg-slate-50 text-[#0f294a] text-[12px] font-bold uppercase tracking-wider"
+            >
+              <X size={18} />
+              <span>Close</span>
+            </button>
+          </div>
+
+          {/* Drawer Content */}
+          <div className="flex flex-col items-center gap-6 my-auto">
             <img
               src="/TEENSPACE-01-2.png"
               alt="Teenspace Logo"
               width={150}
               height={54}
-              className="h-[54px] w-auto object-contain scale-[2.2] origin-center mt-2"
+              className="h-[54px] w-auto object-contain scale-[2.2] origin-center mb-2"
             />
-          </div>
-
-          <div className="flex flex-col items-center gap-6 mt-4">
             {links.map(l => (
               <a
                 key={l.label}
@@ -113,15 +132,16 @@ export default function Navbar() {
                 {l.label}
               </a>
             ))}
+            <a
+              href="#register"
+              onClick={() => setOpen(false)}
+              className="btn-primary mt-4 w-60 justify-center py-3.5 text-sm"
+            >
+              Register Now
+            </a>
           </div>
-          
-          <a
-            href="#register"
-            onClick={() => setOpen(false)}
-            className="btn-primary mt-2 w-56 justify-center py-3.5 text-sm"
-          >
-            Register Now
-          </a>
+
+          <p className="text-center text-xs text-[#9ca3af]">© 2026 Wisdom Students · Kozhikode North</p>
         </div>
       )}
     </header>
