@@ -6,14 +6,14 @@ const WaIcon = () => <svg className="w-4 h-4" fill="none" stroke="currentColor" 
 
 const contacts = [
   { icon: MapPin, title: 'Location',       value: 'Mujahid Centre, Wisdom Office, Kozhikode North — 673620', link: 'https://maps.google.com/?q=Mujahid+centre+Wisdom+office+kozhikode+north' },
-  { icon: Phone, title: 'Call / WhatsApp', value: '62823 97438 · 95672 76017',                               link: 'tel:+916282397438' },
+  { icon: Phone, title: 'Call / WhatsApp', value: '62823 97438 · 95672 76017',                               link: 'https://whatsapp.com/channel/0029VbCYDHpFMqra8ltRmA1O' },
   { icon: Mail,  title: 'Email',           value: 'wisdomstudentskkdnorth@gmail.com',                        link: 'mailto:wisdomstudentskkdnorth@gmail.com' },
 ]
 
-const socials = [
-  { icon: FbIcon, name: 'Facebook',  href: '#' },
-  { icon: IgIcon, name: 'Instagram', href: '#' },
-  { icon: WaIcon, name: 'WhatsApp',  href: '#' },
+export const socials = [
+  { icon: IgIcon, name: 'Instagram', href: 'https://www.instagram.com/wisdomkozhikodenorth?igsh=MXA0Z215Z3dzaWg4' },
+  { icon: FbIcon, name: 'Facebook',  href: 'https://www.facebook.com/share/14mY7khoz7E/' },
+  { icon: WaIcon, name: 'WhatsApp',  href: 'https://whatsapp.com/channel/0029VbCYDHpFMqra8ltRmA1O' },
 ]
 
 export default function Contact() {
@@ -37,14 +37,14 @@ export default function Contact() {
                 href={c.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="card-flat flex items-start gap-4 hover:border-[#dc2626] transition-colors group"
+                className="card-flat flex items-start gap-4 hover:border-[#29b6f6] transition-colors group"
               >
-                <div className="w-9 h-9 rounded-lg bg-red-50 flex items-center justify-center text-[#dc2626] flex-shrink-0">
+                <div className="w-9 h-9 rounded-lg bg-cyan-50 flex items-center justify-center text-[#29b6f6] flex-shrink-0">
                   <c.icon size={16} />
                 </div>
                 <div>
                   <p className="text-[11px] font-bold uppercase tracking-widest text-[#0f294a] mb-0.5">{c.title}</p>
-                  <p className="text-[#64748b] text-sm group-hover:text-[#dc2626] transition-colors">{c.value}</p>
+                  <p className="text-[#64748b] text-sm group-hover:text-[#29b6f6] transition-colors">{c.value}</p>
                 </div>
               </a>
             ))}
@@ -57,8 +57,10 @@ export default function Contact() {
                   <a
                     key={i}
                     href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     aria-label={s.name}
-                    className="w-9 h-9 rounded-lg border border-[#e5e7eb] flex items-center justify-center text-[#0f294a] hover:text-[#dc2626] hover:border-[#dc2626] transition-all"
+                    className="w-9 h-9 rounded-lg border border-[#e5e7eb] flex items-center justify-center text-[#0f294a] hover:text-[#29b6f6] hover:border-[#29b6f6] transition-all"
                   >
                     <s.icon />
                   </a>
