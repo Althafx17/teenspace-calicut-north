@@ -11,18 +11,16 @@ export default function Hero() {
     { value: seconds, label: 'SECONDS' },
   ]
 
-  const dates = ['21', '22', '23']
-
   return (
     <section id="home" className="relative bg-white overflow-hidden border-b border-[#e5e7eb] py-10 lg:py-16">
       
       {/* Background soft ambient light */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-red-100/50 via-sky-50/40 to-transparent rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-pink-100/40 via-sky-50/50 to-transparent rounded-full blur-3xl pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
         
-        {/* Left Column: Heading Lockup + Dates + Countdown */}
-        <div className="lg:col-span-7 z-10">
+        {/* Left Column: Heading Lockup + Consolidated Date + Countdown (z-20 for clear mobile text hierarchy) */}
+        <div className="lg:col-span-7 z-20 relative">
           
           {/* Eyebrow Badges */}
           <div className="flex flex-wrap gap-2 mb-4">
@@ -47,16 +45,13 @@ export default function Hero() {
             WISDOM STUDENTS — KOZHIKODE NORTH
           </p>
 
-          {/* Date Badges Row (Red Theme Reverted) */}
+          {/* Consolidated Date Badge Element */}
           <div className="flex items-center gap-3 mb-6">
-            {dates.map((d, i) => (
-              <div
-                key={i}
-                className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-[#dc2626] to-[#b91c1c] text-white font-black text-2xl sm:text-3xl flex items-center justify-center shadow-lg shadow-red-500/25 tracking-tight transform hover:scale-105 transition-transform"
-              >
-                {d}
-              </div>
-            ))}
+            <div className="inline-flex items-center gap-3 px-6 py-3 rounded-2xl bg-gradient-to-r from-[#dc2626] to-[#b91c1c] text-white font-black text-2xl sm:text-3xl shadow-lg shadow-red-500/25 tracking-tight transform hover:scale-105 transition-transform">
+              <span>OCTOBER 21 – 23</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-white/60" />
+              <span>2026</span>
+            </div>
           </div>
 
           {/* Countdown Grid (4 Cards with Red Accent Bar) */}
@@ -84,11 +79,11 @@ export default function Hero() {
             UNTIL TEENSPACE CONFERENCE — PAYYOLI, KOZHIKODE NORTH
           </p>
 
-          {/* Pill Register Button */}
+          {/* Pill Register Button (Gradient Blue to Pink Theme) */}
           <div>
             <a
               href="#register"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-[#29b6f6] to-[#0284c7] text-white text-base font-bold tracking-wider shadow-xl shadow-sky-400/30 hover:scale-105 hover:shadow-2xl hover:shadow-sky-400/40 active:scale-100 transition-all uppercase"
+              className="btn-primary register-button inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-base font-bold tracking-wider hover:scale-105 transition-all uppercase"
             >
               Register Now <ArrowRight size={18} />
             </a>
@@ -96,20 +91,20 @@ export default function Hero() {
 
         </div>
 
-        {/* Right Column: Seamlessly Blended Ocean Wave Cutout */}
-        <div className="lg:col-span-5 relative flex justify-center items-center">
+        {/* Right Column: Seamlessly Blended Ocean Wave Cutout (z-0 relative) */}
+        <div className="lg:col-span-5 z-0 relative flex justify-center items-center">
           
           {/* Ambient Glow */}
-          <div className="absolute inset-0 bg-gradient-to-tr from-sky-400/25 via-cyan-200/30 to-blue-500/10 rounded-full blur-3xl animate-wave-swell" />
+          <div className="absolute inset-0 bg-gradient-to-tr from-sky-400/20 via-pink-200/25 to-blue-500/10 rounded-full blur-3xl animate-wave-swell" />
 
           {/* Blended Ocean Wave Container */}
-          <div className="relative w-full max-w-[360px] sm:max-w-[400px] lg:max-w-[440px] aspect-[9/16] rounded-[36px] overflow-hidden shadow-2xl border-4 border-white animate-wave-motion blend-ocean-edges">
+          <div className="relative w-full max-w-[360px] sm:max-w-[400px] lg:max-w-[440px] aspect-[9/16] rounded-[36px] overflow-hidden shadow-2xl border-4 border-white blend-ocean-edges">
             
-            {/* Ocean Image */}
+            {/* Ocean Image with Liquid sea-wave-break Animation */}
             <img
               src="/hero-ocean.png"
               alt="Teenspace Ocean Beach Wave"
-              className="w-full h-full object-cover"
+              className="hero-image w-full h-full object-cover"
             />
 
             {/* Multi-Edge Soft Gradient Overlays */}
@@ -117,8 +112,8 @@ export default function Hero() {
             <div className="absolute inset-0 bg-gradient-to-r from-white/30 via-transparent to-white/10 pointer-events-none" />
 
             {/* Glassmorphic Badge Overlay */}
-            <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-white/90 backdrop-blur-md border border-white/60 shadow-xl text-center">
-              <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#dc2626]">
+            <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-white/90 backdrop-blur-md border border-white/60 shadow-xl text-center z-10">
+              <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#ec4899]">
                 Wisdom Students Conference
               </span>
               <p className="text-sm font-black text-[#0f294a] mt-0.5">
