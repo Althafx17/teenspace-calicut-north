@@ -12,7 +12,7 @@ export default function Hero() {
             October 21, 2026
           </span>
           <span className="inline-flex items-center px-3 py-1 rounded-md bg-slate-50 text-[#0f294a] text-[11px] font-bold uppercase tracking-widest border border-slate-200">
-            Kozhikode North
+            PAYYOLI
           </span>
           <span className="inline-flex items-center px-3 py-1 rounded-md bg-slate-50 text-[#0f294a] text-[11px] font-bold uppercase tracking-widest border border-slate-200">
             Higher Secondary

@@ -3,8 +3,8 @@ import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
 
 const About        = lazy(() => import('@/components/About'))
-const Highlights   = lazy(() => import('@/components/Highlights'))
 const Registration = lazy(() => import('@/components/Registration'))
+const Highlights   = lazy(() => import('@/components/Highlights'))
 const Contact      = lazy(() => import('@/components/Contact'))
 const Footer       = lazy(() => import('@/components/Footer'))
 
@@ -19,8 +19,8 @@ function App() {
       <main className="flex-1">
         <Hero />
         <Suspense fallback={<SectionFallback />}><About /></Suspense>
-        <Suspense fallback={<SectionFallback />}><Highlights /></Suspense>
         <Suspense fallback={<SectionFallback />}><Registration /></Suspense>
+        <Suspense fallback={<SectionFallback />}><Highlights /></Suspense>
         <Suspense fallback={<SectionFallback />}><Contact /></Suspense>
       </main>
       <Suspense fallback={null}><Footer /></Suspense>
