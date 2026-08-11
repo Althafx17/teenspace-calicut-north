@@ -1,4 +1,4 @@
-import { BrandLogo } from './Navbar'
+import { WisdomStudentsTag } from './Navbar'
 import { socials } from './Contact'
 
 export default function Footer() {
@@ -6,8 +6,20 @@ export default function Footer() {
     <footer className="bg-white border-t border-[#e5e7eb] py-10">
       <div className="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
 
-        {/* Brand Logo */}
-        <BrandLogo />
+        {/* Brand Logo & Tag */}
+        <div className="flex flex-col items-center sm:items-start gap-1">
+          <WisdomStudentsTag theme="light" />
+          <div className="h-8 overflow-hidden flex items-center justify-start mt-1">
+            <img
+              src="/TEENSPACE-01-2.png"
+              alt="Teenspace Logo"
+              width={100}
+              height={36}
+              decoding="async"
+              className="h-8 w-auto object-contain scale-[1.7] origin-left"
+            />
+          </div>
+        </div>
 
         {/* Navigation & Social Links */}
         <div className="flex flex-col sm:flex-row items-center gap-6">
