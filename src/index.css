@@ -12,7 +12,7 @@
   --bg:     #ffffff;
 
   /* Gradient shorthand */
-  --grad: linear-gradient(135deg, var(--pink) 0%, var(--cyan) 100%);
+  --grad: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
 }
 
 /* ─── Reset & Base ────────────────────────────────────────────────── */
@@ -66,7 +66,7 @@ body {
 
 /* ─── Buttons ──────────────────────────────────────────────────────── */
 .btn-primary {
-  background: var(--grad);
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
   color: #fff;
   font-size: 14px;
   font-weight: 700;
@@ -79,9 +79,10 @@ body {
   gap: 8px;
   border: none;
   cursor: pointer;
-  transition: filter 160ms ease, transform 160ms ease;
+  box-shadow: 0 10px 25px -5px rgba(220, 38, 38, 0.35);
+  transition: filter 160ms ease, transform 160ms ease, box-shadow 160ms ease;
 }
-.btn-primary:hover  { filter: brightness(1.08); transform: translateY(-1px); }
+.btn-primary:hover  { filter: brightness(1.08); transform: translateY(-1px); box-shadow: 0 14px 28px -4px rgba(220, 38, 38, 0.45); }
 .btn-primary:active { transform: none; filter: brightness(0.96); }
 
 .btn-secondary {
@@ -193,13 +194,25 @@ body {
   opacity: 1;
 }
 
-/* ─── Countdown ────────────────────────────────────────────────────── */
-.countdown-block {
-  text-align: center;
-  padding: 20px 12px;
-  border: 1.5px solid #e5e7eb;
-  border-radius: 10px;
-  background: #fff;
+/* ─── Wave Animation for Hero ─────────────────────────────────────── */
+@keyframes waveMotion {
+  0%   { transform: translateY(0px) scale(1) rotate(0deg); }
+  33%  { transform: translateY(-7px) scale(1.015) rotate(0.6deg); }
+  66%  { transform: translateY(3px) scale(0.995) rotate(-0.4deg); }
+  100% { transform: translateY(0px) scale(1) rotate(0deg); }
+}
+
+@keyframes waveSwell {
+  0%, 100% { opacity: 0.9; transform: scaleY(1); }
+  50%      { opacity: 1; transform: scaleY(1.03); }
+}
+
+.animate-wave-motion {
+  animation: waveMotion 6s ease-in-out infinite;
+}
+
+.animate-wave-swell {
+  animation: waveSwell 4s ease-in-out infinite;
 }
 
 /* ─── Scrollbar ────────────────────────────────────────────────────── */
@@ -207,7 +220,7 @@ body {
 ::-webkit-scrollbar-track { background: #fff; }
 ::-webkit-scrollbar-thumb { background: #e5e7eb; border-radius: 2px; }
 
-/* ─── Selection — uses brand pink ─────────────────────────────────── */
+/* ─── Selection ────────────────────────────────────────────────────── */
 ::selection { background: rgba(233,30,140,0.12); color: #0f294a; }
 
 /* ─── Fade-up animation ────────────────────────────────────────────── */
