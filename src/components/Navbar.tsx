@@ -46,16 +46,16 @@ export default function Navbar() {
       <nav className="bg-white border-b border-[#e5e7eb]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-2">
 
-          {/* Clean Uncropped Logo */}
-          <a href="#home" className="flex items-center justify-start h-[52px] shrink-0">
+          {/* Centered & Scaled Logo (Whitespace Cropped) */}
+          <a href="#home" className="logo-container flex items-center justify-center h-[52px] w-[140px] sm:w-[170px] overflow-hidden shrink-0">
             <img
               src="/TEENSPACE-01-2.png"
               alt="Teenspace Logo"
-              width={180}
-              height={52}
+              width={160}
+              height={48}
               fetchPriority="high"
               decoding="sync"
-              className="h-[48px] sm:h-[54px] w-auto object-contain max-w-[180px] sm:max-w-[220px]"
+              className="logo-image h-[48px] w-auto object-cover scale-[1.5] origin-center"
             />
           </a>
 
@@ -72,11 +72,11 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Action Buttons (Register + Mobile Menu) */}
+          {/* Action Buttons (Responsive Register + Mobile Menu) */}
           <div className="flex items-center gap-2 sm:gap-3 shrink-0">
             <a
               href="#register"
-              className="btn-primary register-button inline-flex text-[11px] sm:text-[13px] !py-2 !px-3 sm:!py-2.5 sm:!px-5 rounded-lg"
+              className="btn-primary register-button inline-flex text-[12px] md:text-[13px] !py-2 !px-4 md:!py-3 md:!px-6 rounded-lg"
             >
               Register Now
             </a>
@@ -121,13 +121,15 @@ export default function Navbar() {
 
           {/* Drawer Content */}
           <div className="flex flex-col items-center gap-6 my-auto">
-            <img
-              src="/TEENSPACE-01-2.png"
-              alt="Teenspace Logo"
-              width={180}
-              height={54}
-              className="h-[54px] w-auto object-contain max-w-[200px] mb-2"
-            />
+            <div className="logo-container flex items-center justify-center h-[54px] w-[180px] overflow-hidden mb-2">
+              <img
+                src="/TEENSPACE-01-2.png"
+                alt="Teenspace Logo"
+                width={180}
+                height={54}
+                className="logo-image h-[54px] w-auto object-cover scale-[1.5] origin-center"
+              />
+            </div>
             {links.map(l => (
               <a
                 key={l.label}
